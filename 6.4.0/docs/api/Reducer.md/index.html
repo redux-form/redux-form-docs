@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>Redux Form - `reducer`</title>
+    <link href="https://redux-form.com/6.4.0/bundle.css"
+      media="screen, projection" rel="stylesheet" type="text/css"/>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+          media="screen, projection" rel="stylesheet" type="text/css"/>
+    <meta itemprop="name" content="Redux Form"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Redux Form"/>
+    <meta property="og:site_name" content="Redux Form"/>
+    <meta property="og:description" content="The best way to manage your form state in Redux."/>
+    <meta property="og:image" content="logo.png"/>
+    <meta property="twitter:site" content="@erikras"/>
+    <meta property="twitter:creator" content="@erikras"/>
+    <style type="text/css">
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+  <div id="content">
+    <div class="app___3P8ep hasNav___1KF_W" data-reactroot="" data-reactid="1" data-react-checksum="888648857"><div class="nav___11xa5" data-reactid="2"><button type="button" data-reactid="3"></button><div class="overlay___1GMox" data-reactid="4"><i class="fa fa-times" data-reactid="5"></i><!-- react-text: 6 --> Close<!-- /react-text --></div><div class="placeholder___TzF1K" data-reactid="7"></div><nav class="menu___12xDU" data-reactid="8"><a href="https://redux-form.com/6.4.0" class="brand___1qRUu" data-reactid="9">Redux Form</a><a href="https://redux-form.com/6.4.0/docs/GettingStarted.md" class="" data-reactid="10">Getting Started</a><a href="https://redux-form.com/6.4.0/docs/MigrationGuide.md" class="" data-reactid="11"><code>v6</code> Migration Guide</a><a href="https://redux-form.com/6.4.0/docs/ValueLifecycle.md" class="" data-reactid="12">Value Lifecycle</a><a href="https://redux-form.com/6.4.0/docs/api" class="" data-reactid="13">API</a><a href="https://redux-form.com/6.4.0/docs/api/ReduxForm.md" class="indent1___4iVnL" data-reactid="14"><code>reduxForm()</code></a><a href="https://redux-form.com/6.4.0/docs/api/Props.md" class="indent1___4iVnL" data-reactid="15"><code>props</code></a><a href="https://redux-form.com/6.4.0/docs/api/Field.md" class="indent1___4iVnL" data-reactid="16"><code>Field</code></a><a href="https://redux-form.com/6.4.0/docs/api/Fields.md" class="indent1___4iVnL" data-reactid="17"><code>Fields</code></a><a href="https://redux-form.com/6.4.0/docs/api/FieldArray.md" class="indent1___4iVnL" data-reactid="18"><code>FieldArray</code></a><a href="https://redux-form.com/6.4.0/docs/api/Form.md" class="indent1___4iVnL" data-reactid="19"><code>Form</code></a><a href="https://redux-form.com/6.4.0/docs/api/FormSection.md" class="indent1___4iVnL" data-reactid="20"><code>FormSection</code></a><a href="https://redux-form.com/6.4.0/docs/api/FormValueSelector.md" class="indent1___4iVnL" data-reactid="21"><code>formValueSelector()</code></a><a href="https://redux-form.com/6.4.0/docs/api/Reducer.md" class="indent1___4iVnL active___2eU59" data-reactid="22"><code>reducer</code></a><a href="https://redux-form.com/6.4.0/docs/api/ReducerPlugin.md" class="indent2___2PiOO" data-reactid="23"><code>reducer.plugin()</code></a><a href="https://redux-form.com/6.4.0/docs/api/SubmissionError.md" class="indent1___4iVnL" data-reactid="24"><code>SubmissionError</code></a><a href="https://redux-form.com/6.4.0/docs/api/ActionCreators.md" class="indent1___4iVnL" data-reactid="25">Action Creators</a><a href="https://redux-form.com/6.4.0/docs/api/Selectors.md" class="indent1___4iVnL" data-reactid="26">Selectors</a><a href="https://redux-form.com/6.4.0/docs/faq" class="" data-reactid="27">FAQ</a><a href="https://redux-form.com/6.4.0/examples" class="" data-reactid="28">Examples</a><a href="https://redux-form.com/6.4.0/examples/simple" class="indent1___4iVnL" data-reactid="29">Simple Form</a><a href="https://redux-form.com/6.4.0/examples/syncValidation" class="indent1___4iVnL" data-reactid="30">Sync Validation</a><a href="https://redux-form.com/6.4.0/examples/fieldLevelValidation" class="indent1___4iVnL" data-reactid="31">Field-Level Validation</a><a href="https://redux-form.com/6.4.0/examples/submitValidation" class="indent1___4iVnL" data-reactid="32">Submit Validation</a><a href="https://redux-form.com/6.4.0/examples/asyncValidation" class="indent1___4iVnL" data-reactid="33">Async Validation</a><a href="https://redux-form.com/6.4.0/examples/initializeFromState" class="indent1___4iVnL" data-reactid="34">Initializing from State</a><a href="https://redux-form.com/6.4.0/examples/selectingFormValues" class="indent1___4iVnL" data-reactid="35">Selecting Form Values</a><a href="https://redux-form.com/6.4.0/examples/fieldArrays" class="indent1___4iVnL" data-reactid="36">Field Arrays</a><a href="https://redux-form.com/6.4.0/examples/remoteSubmit" class="indent1___4iVnL" data-reactid="37">Remote Submit</a><a href="https://redux-form.com/6.4.0/examples/normalizing" class="indent1___4iVnL" data-reactid="38">Normalizing</a><a href="https://redux-form.com/6.4.0/examples/immutable" class="indent1___4iVnL" data-reactid="39">Immutable JS</a><a href="https://redux-form.com/6.4.0/examples/wizard" class="indent1___4iVnL" data-reactid="40">Wizard Form</a><a href="https://redux-form.com/6.4.0/examples/material-ui" class="indent1___4iVnL" data-reactid="41">Material UI</a><a href="https://redux-form.com/6.4.0/examples/react-widgets" class="indent1___4iVnL" data-reactid="42">React Widgets</a><a href="https://redux-form.com/6.4.0/docs/DocumentationVersions.md" class="" data-reactid="43">Older Versions</a></nav></div><div class="contentAndFooter___kE2nt" data-reactid="44"><div class="topNav___sBW8S" data-reactid="45"><a href="https://redux-form.com" class="brand___YAZl-" data-reactid="46"></a><a class="github___3-vRv" href="https://github.com/erikras/redux-form" title="Github" target="_blank" data-reactid="47"><i class="fa fa-fw fa-github" data-reactid="48"></i></a></div><div class="content___3TVHp" data-reactid="49"><div data-reactid="50"><ol class="breadcrumbs___1BHo6" data-reactid="51"><li data-reactid="52"><a href="https://redux-form.com/6.4.0/" data-reactid="53">Redux Form</a></li><li data-reactid="54"><a href="https://redux-form.com/6.4.0/docs/api" data-reactid="55">API</a></li><li data-reactid="56"><code>reducer</code></li></ol><div data-reactid="57"><h1 id="-reducer-"><code>reducer</code></h1>
+<p><a href="https://github.com/erikras/redux-form/blob/master/src/reducer.js"><code>View source on GitHub</code></a></p>
+<blockquote>
+<p>The form reducer. Should be given to mounted to your Redux state at <code>form</code>.</p>
+<p>If you absolutely must mount it somewhere other than <code>form</code>, you may provide a
+<code>getFormState(state)</code> function to the <code>reduxForm()</code> decorator, to get the slice of the Redux 
+state where you have mounted the <code>redux-form</code> reducer.</p>
+<p>If you&#39;re using Immutablejs to manage your Redux state, you MUST import the reducer from &#39;redux-form/immutable&#39;.</p>
+</blockquote>
+<h3 id="es5-example">ES5 Example</h3>
+<pre class="language-jsx"><code class="language-jsx">
+<span class="token keyword" >var</span> redux <span class="token operator" >=</span> <span class="token function" >require</span><span class="token punctuation" >(</span><span class="token string" >'redux'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<span class="token keyword" >var</span> formReducer <span class="token operator" >=</span> <span class="token function" >require</span><span class="token punctuation" >(</span><span class="token string" >'redux-form'</span><span class="token punctuation" >)</span><span class="token punctuation" >.</span>reducer<span class="token punctuation" >;</span>
+<span class="token comment" spellcheck="true">// Or with Immutablejs:</span>
+<span class="token comment" spellcheck="true">// var formReducer = require('redux-form/immutable').reducer;</span>
+
+<span class="token keyword" >var</span> reducers <span class="token operator" >=</span> <span class="token punctuation" >{</span>
+  <span class="token comment" spellcheck="true">// ... your other reducers here ...</span>
+  form<span class="token punctuation" >:</span> formReducer
+<span class="token punctuation" >}</span><span class="token punctuation" >;</span>
+<span class="token keyword" >var</span> reducer <span class="token operator" >=</span> redux<span class="token punctuation" >.</span><span class="token function" >combineReducers</span><span class="token punctuation" >(</span>reducers<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<span class="token keyword" >var</span> store <span class="token operator" >=</span> redux<span class="token punctuation" >.</span><span class="token function" >createStore</span><span class="token punctuation" >(</span>reducer<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+</code></pre>
+
+<h3 id="es6-example">ES6 Example</h3>
+<pre class="language-jsx"><code class="language-jsx">
+<span class="token keyword" >import</span> <span class="token punctuation" >{</span> createStore<span class="token punctuation" >,</span> combineReducers <span class="token punctuation" >}</span> <span class="token keyword" >from</span> <span class="token string" >'redux'</span><span class="token punctuation" >;</span>
+<span class="token keyword" >import</span> <span class="token punctuation" >{</span> reducer <span class="token keyword" >as</span> formReducer <span class="token punctuation" >}</span> <span class="token keyword" >from</span> <span class="token string" >'redux-form'</span><span class="token punctuation" >;</span>
+<span class="token comment" spellcheck="true">// Or with Immutablejs:</span>
+<span class="token comment" spellcheck="true">// import { reducer as formReducer } from 'redux-form/immutable';</span>
+
+<span class="token keyword" >const</span> reducers <span class="token operator" >=</span> <span class="token punctuation" >{</span>
+  <span class="token comment" spellcheck="true">// ... your other reducers here ...</span>
+  form<span class="token punctuation" >:</span> formReducer
+<span class="token punctuation" >}</span><span class="token punctuation" >;</span>
+<span class="token keyword" >const</span> reducer <span class="token operator" >=</span> <span class="token function" >combineReducers</span><span class="token punctuation" >(</span>reducers<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<span class="token keyword" >const</span> store <span class="token operator" >=</span> <span class="token function" >createStore</span><span class="token punctuation" >(</span>reducer<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+</code></pre>
+</div></div></div><div class="footer___1oh0h" data-reactid="58"><div data-reactid="59">Created by Erik Rasmussen</div><div data-reactid="60"><!-- react-text: 61 -->Got questions? Ask for help:<!-- /react-text --><a class="help___3OayI" href="https://stackoverflow.com/questions/ask?tags=redux-form" title="Stack Overflow" target="_blank" data-reactid="62"><i class="fa fa-fw fa-stack-overflow" data-reactid="63"></i></a><a class="help___3OayI" href="https://github.com/erikras/redux-form/issues/new" title="Github" target="_blank" data-reactid="64"><i class="fa fa-fw fa-github" data-reactid="65"></i></a></div><div data-reactid="66"><a href="https://twitter.com/erikras" class="twitter-follow-button" data-show-count="false" data-size="large" data-reactid="67"><!-- react-text: 68 -->Follow @<!-- /react-text --><!-- react-text: 69 -->erikras<!-- /react-text --></a><a href="https://twitter.com/ReduxForm" class="twitter-follow-button" data-show-count="false" data-size="large" data-reactid="70"><!-- react-text: 71 -->Follow @<!-- /react-text --><!-- react-text: 72 -->ReduxForm<!-- /react-text --></a></div></div></div></div>
+  </div>
+  <script src="https://redux-form.com/6.4.0/bundle.js"></script>
+  <script>initReact({"version":"6.4.0","path":"/docs/api/Reducer.md","breadcrumbs":[{"path":"https://redux-form.com/6.4.0/","title":"Redux Form"},{"path":"https://redux-form.com/6.4.0/docs/api","title":"API"},{"path":"https://redux-form.com/6.4.0/docs/api/Reducer.md","title":"`reducer`"}]})</script>
+  <script>
+    (function(i,s,o,g,r,a,m){i[ 'GoogleAnalyticsObject' ] = r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-69298417-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </body>
+  </html>
