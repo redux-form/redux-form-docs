@@ -14,7 +14,8 @@
     "prepublish": "npm run clean && npm run lint && npm run build",
     "publish": "node lib/publish.js"
   },
-  "author": "Erik Rasmussen <rasmussenerik@gmail.com> (http://github.com/erikras)",
+  "author":
+    "Erik Rasmussen <rasmussenerik@gmail.com> (http://github.com/erikras)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/erikras/redux-form/issues"
@@ -27,7 +28,7 @@
     "mkdirp": "^0.5.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "redux-form-website-template": "0.0.59"
+    "redux-form-website-template": "0.0.60"
   },
   "devDependencies": {
     "babel-cli": "^6.6.4",
@@ -50,9 +51,7 @@
   "npmFileMap": [
     {
       "basePath": "/dist/",
-      "files": [
-        "*.js"
-      ]
+      "files": ["*.js"]
     }
   ]
 }
