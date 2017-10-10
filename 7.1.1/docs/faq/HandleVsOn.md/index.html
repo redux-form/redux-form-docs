@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>Redux Form - What's the difference between `handleSubmit` and `onSubmit`?</title>
+    <link href="https://redux-form.com/7.1.1/bundle.css"
+      media="screen, projection" rel="stylesheet" type="text/css"/>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"
+          media="screen, projection" rel="stylesheet" type="text/css"/>
+    <meta itemprop="name" content="Redux Form"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Redux Form"/>
+    <meta property="og:site_name" content="Redux Form"/>
+    <meta property="og:description" content="The best way to manage your form state in Redux."/>
+    <meta property="og:image" content="logo.png"/>
+    <meta property="twitter:site" content="@erikras"/>
+    <meta property="twitter:creator" content="@erikras"/>
+    <style type="text/css">
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+  <div id="content">
+    <div class="app___3P8ep hasNav___1KF_W"><div class="nav___11xa5"><button type="button"></button><div class="overlay___1GMox"><i class="fa fa-times"></i> Close</div><div class="placeholder___TzF1K"></div><nav class="menu___12xDU"><a href="https://redux-form.com/7.1.1" class="brand___1qRUu">Redux Form</a><div><div id="code-sponsor-widget" style="background-color:#2d2d2d;width:240px;height:240px;margin-left:auto;margin-right:auto;"></div><script type="text/javascript" src="https://app.codesponsor.io/scripts/O6JC6ZWFGnkPaSiGV6rGzA?theme=dark&amp;width=240&amp;height=240"></script></div><a href="https://redux-form.com/7.1.1/docs/GettingStarted.md" class="">Getting Started</a><a href="https://redux-form.com/7.1.1/docs/MigrationGuide.md" class=""><code>v6</code> Migration Guide</a><a href="https://redux-form.com/7.1.1/docs/ValueLifecycle.md" class="">Value Lifecycle</a><a href="https://redux-form.com/7.1.1/docs/Flow.md" class="">Flow</a><a href="https://redux-form.com/7.1.1/docs/api" class="">API</a><a href="https://redux-form.com/7.1.1/docs/api/ReduxForm.md" class="indent1___4iVnL"><code>reduxForm()</code></a><a href="https://redux-form.com/7.1.1/docs/api/Props.md" class="indent1___4iVnL"><code>props</code></a><a href="https://redux-form.com/7.1.1/docs/api/Field.md" class="indent1___4iVnL"><code>Field</code></a><a href="https://redux-form.com/7.1.1/docs/api/Fields.md" class="indent1___4iVnL"><code>Fields</code></a><a href="https://redux-form.com/7.1.1/docs/api/FieldArray.md" class="indent1___4iVnL"><code>FieldArray</code></a><a href="https://redux-form.com/7.1.1/docs/api/Form.md" class="indent1___4iVnL"><code>Form</code></a><a href="https://redux-form.com/7.1.1/docs/api/FormSection.md" class="indent1___4iVnL"><code>FormSection</code></a><a href="https://redux-form.com/7.1.1/docs/api/FormValues.md" class="indent1___4iVnL"><code>formValues()</code></a><a href="https://redux-form.com/7.1.1/docs/api/FormValueSelector.md" class="indent1___4iVnL"><code>formValueSelector()</code></a><a href="https://redux-form.com/7.1.1/docs/api/Reducer.md" class="indent1___4iVnL"><code>reducer</code></a><a href="https://redux-form.com/7.1.1/docs/api/ReducerPlugin.md" class="indent2___2PiOO"><code>reducer.plugin()</code></a><a href="https://redux-form.com/7.1.1/docs/api/SubmissionError.md" class="indent1___4iVnL"><code>SubmissionError</code></a><a href="https://redux-form.com/7.1.1/docs/api/ActionCreators.md" class="indent1___4iVnL">Action Creators</a><a href="https://redux-form.com/7.1.1/docs/api/Selectors.md" class="indent1___4iVnL">Selectors</a><a href="https://redux-form.com/7.1.1/docs/faq" class="">FAQ</a><a href="https://redux-form.com/7.1.1/examples" class="">Examples</a><a href="https://redux-form.com/7.1.1/examples/simple" class="indent1___4iVnL">Simple Form</a><a href="https://redux-form.com/7.1.1/examples/syncValidation" class="indent1___4iVnL">Sync Validation</a><a href="https://redux-form.com/7.1.1/examples/fieldLevelValidation" class="indent1___4iVnL">Field-Level Validation</a><a href="https://redux-form.com/7.1.1/examples/submitValidation" class="indent1___4iVnL">Submit Validation</a><a href="https://redux-form.com/7.1.1/examples/asyncValidation" class="indent1___4iVnL">Async Validation</a><a href="https://redux-form.com/7.1.1/examples/initializeFromState" class="indent1___4iVnL">Initializing from State</a><a href="https://redux-form.com/7.1.1/examples/selectingFormValues" class="indent1___4iVnL">Selecting Form Values</a><a href="https://redux-form.com/7.1.1/examples/fieldArrays" class="indent1___4iVnL">Field Arrays</a><a href="https://redux-form.com/7.1.1/examples/remoteSubmit" class="indent1___4iVnL">Remote Submit</a><a href="https://redux-form.com/7.1.1/examples/normalizing" class="indent1___4iVnL">Normalizing</a><a href="https://redux-form.com/7.1.1/examples/immutable" class="indent1___4iVnL">Immutable JS</a><a href="https://redux-form.com/7.1.1/examples/wizard" class="indent1___4iVnL">Wizard Form</a><a href="https://redux-form.com/7.1.1/examples/material-ui" class="indent1___4iVnL">Material UI</a><a href="https://redux-form.com/7.1.1/examples/react-widgets" class="indent1___4iVnL">React Widgets</a><a href="https://redux-form.com/7.1.1/docs/DocumentationVersions.md" class="">Older Versions</a></nav></div><div class="contentAndFooter___kE2nt"><div class="topNav___sBW8S"><a href="https://redux-form.com" class="brand___YAZl-"></a><a class="github___3-vRv" href="https://github.com/erikras/redux-form" title="Github" target="_blank"><i class="fa fa-fw fa-github"></i></a></div><div class="content___3TVHp"><div><ol class="breadcrumbs___1BHo6"><li><a href="https://redux-form.com/7.1.1/">Redux Form</a></li><li><a href="https://redux-form.com/7.1.1/docs/faq">FAQ</a></li><li>What&#39;s the difference between <code>handleSubmit</code> and <code>onSubmit</code>?</li></ol><div><h1 class="heading___2W8-L" id="what-39-s-the-difference-between-code-handlesubmit-code-and-code-onsubmit-code-">What&#39;s the difference between <code>handleSubmit</code> and <code>onSubmit</code>? <a href="#what-39-s-the-difference-between-code-handlesubmit-code-and-code-onsubmit-code-" class="anchor___j3LpN">#</a></h1><p>From what I can tell from every example I have seen, there is an unwritten rule in the React community about handling form events:</p>
+<blockquote>
+<p><strong><code>handleX</code> is what you name the function that you pass to the <code>onX</code> prop.</strong></p>
+</blockquote>
+<pre class="language-jsx"><code class="language-jsx">
+<span class="token function" >render</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
+  <span class="token keyword" >const</span> handleClick <span class="token operator" >=</span> <span class="token punctuation" >(</span><span class="token punctuation" >)</span> <span class="token operator" >=</span><span class="token operator" >></span> console<span class="token punctuation" >.</span><span class="token function" >log</span><span class="token punctuation" >(</span><span class="token string" >'Clicked!'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+  <span class="token keyword" >return</span> <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >onClick</span><span class="token script language-javascript" ><span class="token punctuation" >=</span><span class="token punctuation" >{</span>handleClick<span class="token punctuation" >}</span></span><span class="token punctuation" >></span></span>Click me<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >></span></span><span class="token punctuation" >;</span>
+<span class="token punctuation" >}</span>
+</code></pre>
+
+<pre class="language-jsx"><code class="language-jsx">
+<span class="token function" >render</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
+  <span class="token keyword" >const</span> handleSubmit <span class="token operator" >=</span> <span class="token punctuation" >(</span>event<span class="token punctuation" >)</span> <span class="token operator" >=</span><span class="token operator" >></span> <span class="token punctuation" >{</span>
+    event<span class="token punctuation" >.</span><span class="token function" >preventDefault</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+    console<span class="token punctuation" >.</span><span class="token function" >log</span><span class="token punctuation" >(</span><span class="token string" >'Submitted!'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+  <span class="token punctuation" >}</span>
+  <span class="token keyword" >return</span> <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span> <span class="token attr-name" >onClick</span><span class="token script language-javascript" ><span class="token punctuation" >=</span><span class="token punctuation" >{</span>handleClick<span class="token punctuation" >}</span></span><span class="token punctuation" >></span></span>Click me<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >></span></span><span class="token punctuation" >;</span>
+<span class="token punctuation" >}</span>
+</code></pre>
+
+<h2 class="heading___2W8-L" id="how-do-i-pass-form-value-s-to-my-own-submit-handler-">How do I pass form value(s) to my own submit handler? <a href="#how-do-i-pass-form-value-s-to-my-own-submit-handler-" class="anchor___j3LpN">#</a></h2><p>redux-form covers <code>handleSubmit</code> functionality by <a href="https://github.com/zacacollier/redux-form/blob/master/src/handleSubmit.js">providing a respective handler</a> that you pass as a prop - that is, a <code>handleSubmit</code> method for you to pass to <code>onSubmit</code>.</p>
+<p>With that in mind, you can think of the redux-form <code>handleSubmit</code> as a middle layer for your form&#39;s <code>submit</code> handler. Simply write your components as you normally would, passing <code>handleSubmit</code> where appropriate:</p>
+<pre class="language-jsx"><code class="language-jsx">
+<span class="token keyword" >import</span> React <span class="token keyword" >from</span> <span class="token string" >'react'</span><span class="token punctuation" >;</span>
+<span class="token keyword" >import</span> <span class="token punctuation" >{</span> reduxForm<span class="token punctuation" >,</span> Field <span class="token punctuation" >}</span> <span class="token keyword" >from</span> <span class="token string" >'redux-form'</span><span class="token punctuation" >;</span>
+
+<span class="token keyword" >const</span> SearchBar <span class="token operator" >=</span> <span class="token punctuation" >(</span><span class="token punctuation" >{</span> handleChange<span class="token punctuation" >,</span> handleSubmit<span class="token punctuation" >,</span> value <span class="token punctuation" >}</span><span class="token punctuation" >)</span> <span class="token operator" >=</span><span class="token operator" >></span> <span class="token punctuation" >(</span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>form</span> <span class="token attr-name" >onSubmit</span><span class="token script language-javascript" ><span class="token punctuation" >=</span><span class="token punctuation" >{</span>handleSubmit<span class="token punctuation" >}</span></span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>Field</span>
+        <span class="token attr-name" >component</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>input<span class="token punctuation" >"</span></span>
+        <span class="token attr-name" >name</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>search<span class="token punctuation" >"</span></span>
+        <span class="token attr-name" >onChange</span><span class="token script language-javascript" ><span class="token punctuation" >=</span><span class="token punctuation" >{</span>handleChange<span class="token punctuation" >}</span></span>
+        <span class="token attr-name" >type</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>text<span class="token punctuation" >"</span></span>
+        <span class="token attr-name" >value</span><span class="token script language-javascript" ><span class="token punctuation" >=</span><span class="token punctuation" >{</span>value<span class="token punctuation" >}</span></span>
+      <span class="token punctuation" >/></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>form</span><span class="token punctuation" >></span></span>
+<span class="token punctuation" >)</span>
+<span class="token keyword" >export</span> <span class="token keyword" >default</span> <span class="token function" >reduxForm</span><span class="token punctuation" >(</span><span class="token punctuation" >{</span> form<span class="token punctuation" >:</span> <span class="token string" >'SearchBar'</span> <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >(</span>SearchBar<span class="token punctuation" >)</span>
+</code></pre>
+
+<p>You can access your form&#39;s input values via the <code>values</code> parameter provided to the <code>onSubmit</code> prop:</p>
+<pre class="language-jsx"><code class="language-jsx">
+<span class="token keyword" >import</span> React <span class="token keyword" >from</span> <span class="token string" >'react'</span><span class="token punctuation" >;</span>
+<span class="token keyword" >import</span> <span class="token punctuation" >{</span> connect <span class="token punctuation" >}</span> <span class="token keyword" >from</span> <span class="token string" >'react-redux'</span><span class="token punctuation" >;</span>
+<span class="token keyword" >import</span> SearchBar <span class="token keyword" >from</span> <span class="token string" >'./SearchBar'</span><span class="token punctuation" >;</span>
+
+<span class="token keyword" >let</span> SearchContainer <span class="token operator" >=</span> <span class="token punctuation" >(</span><span class="token punctuation" >{</span> handleSearchSubmit<span class="token punctuation" >,</span> values <span class="token punctuation" >}</span><span class="token punctuation" >)</span> <span class="token operator" >=</span><span class="token operator" >></span> 
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>SearchBar</span>
+    <span class="token attr-name" >onSubmit</span><span class="token script language-javascript" ><span class="token punctuation" >=</span><span class="token punctuation" >{</span>values <span class="token operator" >=</span><span class="token operator" >></span> <span class="token function" >handleSearchSubmit</span><span class="token punctuation" >(</span>values<span class="token punctuation" >.</span>search<span class="token punctuation" >)</span><span class="token punctuation" >}</span></span>
+  <span class="token punctuation" >/></span></span>
+
+<span class="token keyword" >const</span> mapDispatchToProps <span class="token operator" >=</span> <span class="token punctuation" >(</span>dispatch<span class="token punctuation" >)</span> <span class="token operator" >=</span><span class="token operator" >></span> <span class="token punctuation" >(</span><span class="token punctuation" >{</span>
+  handleSearchSubmit<span class="token punctuation" >:</span> value <span class="token operator" >=</span><span class="token operator" >></span> <span class="token function" >dispatch</span><span class="token punctuation" >(</span><span class="token punctuation" >{</span> type<span class="token punctuation" >:</span> <span class="token string" >'SEARCH_CONTAINER_SUBMIT'</span><span class="token punctuation" >,</span> payload<span class="token punctuation" >:</span> value <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >,</span>
+<span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+
+<span class="token keyword" >export</span> <span class="token keyword" >default</span> <span class="token function" >connect</span><span class="token punctuation" >(</span><span class="token keyword" >null</span><span class="token punctuation" >,</span> mapDispatchToProps<span class="token punctuation" >)</span><span class="token punctuation" >(</span>SearchContainer<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+</code></pre>
+
+<p>That&#39;s it! No need to specify <code>event.preventDefault()</code>. All that&#39;s left to do is handle the dispatched form data in your reducer.</p>
+</div></div></div><div class="footer___1oh0h"><div>Created by Erik Rasmussen</div><div>Got questions? Ask for help:<a class="help___3OayI" href="https://stackoverflow.com/questions/ask?tags=redux-form" title="Stack Overflow" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i></a><a class="help___3OayI" href="https://github.com/erikras/redux-form/issues/new" title="Github" target="_blank"><i class="fa fa-fw fa-github"></i></a></div><div><a href="https://twitter.com/erikras" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @erikras</a><a href="https://twitter.com/ReduxForm" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ReduxForm</a></div></div></div></div>
+  </div>
+  <script src="https://unpkg.com/react@15.6.1/dist/react.min.js" integrity="sha384-u/3By6KAUETM5AnedAbB9xV0qLxlsRyVBi8mEekTeqD468SBVx2FXEm+1lf85M7c" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@15.6.1/dist/react-dom.min.js" integrity="sha384-GfT+iyYg21YqdPMH/FWlWLugDiK/neASGRCN8yWPB2Hlam+uP7J0lIgPcbCeHoVG" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/redux-form-doc-version-checker/dist/doc-check.umd.min.js"></script>
+  <script src="https://unpkg.com/redux-form-website-template/dist/bundle.js"></script>
+  <script>initReact({"version":"7.1.1","path":"/docs/faq/HandleVsOn.md","breadcrumbs":[{"path":"https://redux-form.com/7.1.1/","title":"Redux Form"},{"path":"https://redux-form.com/7.1.1/docs/faq","title":"FAQ"},{"path":"https://redux-form.com/7.1.1/docs/faq/HandleVsOn.md","title":"What's the difference between `handleSubmit` and `onSubmit`?"}]})</script>
+  <script>
+    (function(i,s,o,g,r,a,m){i[ 'GoogleAnalyticsObject' ] = r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-69298417-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </body>
+  </html>
