@@ -33,7 +33,7 @@ form, and, in the case of field-specific actions such as <code>CHANGE</code> or 
 <p>Inserts an item into a field array at the specified index</p>
 </blockquote>
 <h3 class="heading___2W8-L" id="-code-arraymove-form-string-field-string-from-number-to-number-code-"><code>arrayMove(form:String, field:String, from:Number, to:Number)</code> <a href="#-code-arraymove-form-string-field-string-from-number-to-number-code-" class="anchor___j3LpN">#</a></h3><blockquote>
-<p>Moves an item from one index in the array to another. In effect, it performs a remove and an 
+<p>Moves an item from one index in the array to another. In effect, it performs a remove and an
 insert, so the item already at the <code>to</code> position will be bumped to a higher index, not overwritten.</p>
 </blockquote>
 <h3 class="heading___2W8-L" id="-code-arraypop-form-string-field-string-code-"><code>arrayPop(form:String, field:String)</code> <a href="#-code-arraypop-form-string-field-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
@@ -71,7 +71,12 @@ insert, so the item already at the <code>to</code> position will be bumped to a 
 <p>Saves the value to the field.</p>
 </blockquote>
 <h3 class="heading___2W8-L" id="-code-clearsubmiterrors-form-string-code-"><code>clearSubmitErrors(form:String)</code> <a href="#-code-clearsubmiterrors-form-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
-<p>Removes <code>submitErrors</code> and <code>error</code>. </p>
+<p>Removes <code>submitErrors</code> and <code>error</code>.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-clearfields-form-string-keeptouched-boolean-persistentsubmiterrors-boolean-fields-string-code-"><code>clearFields(form:String, keepTouched: boolean, persistentSubmitErrors: boolean, ...fields:String)</code> <a href="#-code-clearfields-form-string-keeptouched-boolean-persistentsubmiterrors-boolean-fields-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Cleans fields values for all the fields passed in.</p>
+<p>If the <code>keepTouched</code> parameter is <code>true</code>, the values of currently touched fields will be retained
+If the <code>persistentSubmitErrors</code> parameter is <code>true</code>, the values of currently submit errors fields will be retained</p>
 </blockquote>
 <h3 class="heading___2W8-L" id="-code-destroy-forms-string-code-"><code>destroy(...forms:String)</code> <a href="#-code-destroy-forms-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
 <p>Destroys the forms, removing all of their state.</p>
@@ -86,7 +91,7 @@ your form fields.</p>
 <p>If the <code>keepDirty</code> parameter is <code>true</code>, the values of currently dirty fields will be retained
 to avoid overwriting user edits.  (<code>keepDirty</code> can appear as either the third argument, or a property of <code>options</code> as
 the 3rd or 4th argument, for the sake of backwards compatibility).</p>
-<p>If the <code>keepSubmitSucceeded</code> parameter is <code>true</code>, 
+<p>If the <code>keepSubmitSucceeded</code> parameter is <code>true</code>,
 it will not clear the <code>submitSucceeded</code> flag if it is set.</p>
 </blockquote>
 <h3 class="heading___2W8-L" id="-code-registerfield-form-string-name-string-type-string-code-"><code>registerField(form:String, name:String, type:String)</code> <a href="#-code-registerfield-form-string-name-string-type-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
@@ -96,7 +101,7 @@ it will not clear the <code>submitSucceeded</code> flag if it is set.</p>
 <p>Resets the values in the form back to the values past in with the most recent <code>initialize</code> action.</p>
 </blockquote>
 <h3 class="heading___2W8-L" id="-code-setsubmitfailed-form-string-fields-string-code-"><code>setSubmitFailed(form:String, ...fields:String)</code> <a href="#-code-setsubmitfailed-form-string-fields-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
-<p>Flips <code>submitFailed</code> flag <code>true</code>, removes <code>submitSucceeded</code> and <code>submitting</code>, marks all the fields passed in as <code>touched</code>, and if at least one field was passed flips <code>anyTouched</code> to <code>true</code>. </p>
+<p>Flips <code>submitFailed</code> flag <code>true</code>, removes <code>submitSucceeded</code> and <code>submitting</code>, marks all the fields passed in as <code>touched</code>, and if at least one field was passed flips <code>anyTouched</code> to <code>true</code>.</p>
 </blockquote>
 <h3 class="heading___2W8-L" id="-code-setsubmitsucceeded-form-string-code-"><code>setSubmitSucceeded(form:String)</code> <a href="#-code-setsubmitsucceeded-form-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
 <p>Flips <code>submitSucceeded</code> flag <code>true</code> and removes <code>submitFailed</code>.</p>
