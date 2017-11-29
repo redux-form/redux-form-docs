@@ -183,164 +183,105 @@ validation or if submitting the form has triggered it, respectively.</p>
 <h5 class="heading___2W8-L" id="-code-pristine-boolean-code-required-"><code>pristine : boolean</code> [required] <a href="#-code-pristine-boolean-code-required-" class="anchor___j3LpN">#</a></h5><p><code>true</code> if the form is pristine, <code>false</code> if it is dirty</p>
 <h5 class="heading___2W8-L" id="-code-syncvalidationpasses-boolean-code-required-"><code>syncValidationPasses : boolean</code> [required] <a href="#-code-syncvalidationpasses-boolean-code-required-" class="anchor___j3LpN">#</a></h5><p><code>true</code> if synchronous validation is passing, <code>false</code> if it is failing.</p>
 <p>The default behavior is:</p>
-<pre class="language-jsx"><code class="language-jsx">
-<span class="token operator" >></span>   <span class="token keyword" >if</span><span class="token punctuation" >(</span><span class="token operator" >!</span>syncValidationPasses<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
-<span class="token operator" >></span> </code></pre>
-
 </blockquote>
-<pre><code>return false
-</code></pre><p>} switch(trigger) { case &#39;blur&#39;: // blurring return true case &#39;submit&#39;: //
-submitting, so only async validate if form is dirty or was never initialized //
-conversely, DON&#39;T async validate if the form is pristine just as it was
-initialized return !pristine || !initialized default: return false }</p>
-<pre><code>#### `shouldError(params) : boolean` [optional]
-
-&gt; An optional function you may provide to have full control over when sync validation happens.
-Your `shouldError()` function will be given an object with the following values:
-
-&gt; ##### `values : Object`
-
-&gt; The values in the form of `{ field1: &#39;value1&#39;, field2: &#39;value2&#39; }`.
-
-&gt; ##### `nextProps : Object`
-
-&gt; The next props.
-
-&gt; ##### `props : Object`
-
-&gt; The current props.
-
-&gt; ##### `initialRender : boolean`
-
-&gt; `true` if the form is being initially rendered.
-
-&gt; ##### `structure : Object`
-
-&gt; The structure object being used internally for values. You may wish to use `deepEqual` from the structure.
-
-#### ~~`shouldValidate(params) : boolean`~~ [optional] **DEPRECATED**
-
-&gt; ** DEPRECATED: Use `shouldError()` and `shouldWarn()`. Will be removed in v8.**
-
-&gt; An optional function you may provide to have full control over when sync validation happens.
-Your `shouldValidate()` function will be given an object with the following values:
-
-&gt; ##### `values : Object`
-
-&gt; The values in the form of `{ field1: &#39;value1&#39;, field2: &#39;value2&#39; }`.
-
-&gt; ##### `nextProps : Object`
-
-&gt; The next props.
-
-&gt; ##### `props : Object`
-
-&gt; The current props.
-
-&gt; ##### `initialRender : boolean`
-
-&gt; `true` if the form is being initially rendered.
-
-&gt; ##### `structure : Object`
-
-&gt; The structure object being used internally for values. You may wish to use `deepEqual` from the structure.
-
-#### `shouldWarn(params) : boolean` [optional]
-
-&gt; An optional function you may provide to have full control over when sync validation happens.
-Your `shouldWarn()` function will be given an object with the following values:
-
-&gt; ##### `values : Object`
-
-&gt; The values in the form of `{ field1: &#39;value1&#39;, field2: &#39;value2&#39; }`.
-
-&gt; ##### `nextProps : Object`
-
-&gt; The next props.
-
-&gt; ##### `props : Object`
-
-&gt; The current props.
-
-&gt; ##### `initialRender : boolean`
-
-&gt; `true` if the form is being initially rendered.
-
-&gt; ##### `structure : Object`
-
-&gt; The structure object being used internally for values. You may wish to use `deepEqual` from the structure.
-
-#### `touchOnBlur : boolean` [optional]
-
-&gt; marks fields as `touched` when the blur action is fired. Defaults to `true`.
-
-#### `touchOnChange : boolean` [optional]
-
-&gt; marks fields as `touched` when the change action is fired. Defaults to `false`.
-
-#### `persistentSubmitErrors : boolean` [optional]
-
-&gt; do not remove submit errors when the change action is fired. Defaults to `false`.
-
-#### `validate : (values:Object, props:Object) =&gt; errors:Object` [optional]
-
-&gt; a synchronous validation function that takes the form values and props passed into your component.
-If validation passes, it should return `{}`. If validation fails, it should return the validation errors in the
-form `{ field1: &lt;String&gt;, field2: &lt;String&gt; }`. Defaults to `(values, props) =&gt; ({})`.
-
-&gt; See [Synchronous Validation Example](https://redux-form.com/7.2.0/examples/syncValidation/)
-for more details.
-
-#### `warn : (values:Object, props:Object) =&gt; warnings:Object` [optional]
-
-&gt; a synchronous warning function that takes the form values and props passed into your component. Warnings work
-the same as validations, but do not mark a form as invalid. If the warning check passes, it should return `{}`.
-If the check fails, it should return the warnings in the form `{ field1: &lt;String&gt;, field2: &lt;String&gt; }`.
-Defaults to `(values, props) =&gt; ({})`.
-
-## Instance API
-
-The following are methods or properties that you can access on an instance of your decorated form
-component.
-
-#### `dirty : boolean`
-
-`true` when the current form values are different from the `initialValues`, `false` otherwise.
-
-#### `fieldList : Array`
-
-An array of strings representing all the fields in the form. Mainly useful for testing.
-
-#### `invalid : boolean`
-
-`true` when the form is invalid (has validation errors), `false` otherwise.
-
-#### `pristine : boolean`
-
-`true` when the current form values are the same as the `initialValues`, `false` otherwise.
-
-#### `reset() : void`
-
-Resets the form to the `initialValues`. It will be `pristine` after reset.
-
-#### `submit() : Promise`
-
-Submits the form. [You&#39;d never have guessed that, right?] Returns a promise that will be resolved
-when the form is submitted successfully, or rejected if the submission fails.
-
-#### `valid : boolean`
-
-`true` when the form is valid (has no validation errors), `false` otherwise.
-
-#### `values : Object`
-
-The current values of all the fields in the form.
-
-#### `wrappedInstance : ReactElement`
-
-A reference to the instance of the component you decorated with `reduxForm()`. Mainly useful for
-testing.
-</code></pre></div></div></div><div class="footer___1oh0h"><div class="bsa-cpc sc-bdVaJa lfLfxR"></div><div>Created by Erik Rasmussen</div><div>Got questions? Ask for help:<a class="help___3OayI" href="https://stackoverflow.com/questions/ask?tags=redux-form" title="Stack Overflow" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i></a><a class="help___3OayI" href="https://github.com/erikras/redux-form/issues/new" title="Github" target="_blank"><i class="fa fa-fw fa-github"></i></a></div><div><a href="https://twitter.com/erikras" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @erikras</a><a href="https://twitter.com/ReduxForm" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ReduxForm</a></div></div></div></div>
+<pre class="language-jsx"><code class="language-jsx">
+<span class="token keyword" >if</span> <span class="token punctuation" >(</span><span class="token operator" >!</span>syncValidationPasses<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
+  <span class="token keyword" >return</span> <span class="token boolean" >false</span>
+<span class="token punctuation" >}</span>
+<span class="token keyword" >switch</span> <span class="token punctuation" >(</span>trigger<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
+  <span class="token keyword" >case</span> <span class="token string" >'blur'</span><span class="token punctuation" >:</span>
+    <span class="token comment" spellcheck="true">// blurring</span>
+    <span class="token keyword" >return</span> <span class="token boolean" >true</span>
+  <span class="token keyword" >case</span> <span class="token string" >'submit'</span><span class="token punctuation" >:</span>
+    <span class="token comment" spellcheck="true">// submitting, so only async validate if form is dirty or was never initialized</span>
+    <span class="token comment" spellcheck="true">// conversely, DON'T async validate if the form is pristine just as it was</span>
+    <span class="token comment" spellcheck="true">// initialized</span>
+    <span class="token keyword" >return</span> <span class="token operator" >!</span>pristine <span class="token operator" >||</span> <span class="token operator" >!</span>initialized
+  <span class="token keyword" >default</span><span class="token punctuation" >:</span>
+    <span class="token keyword" >return</span> <span class="token boolean" >false</span>
+<span class="token punctuation" >}</span>
+</code></pre>
+
+<h4 class="heading___2W8-L" id="-code-shoulderror-params-boolean-code-optional-"><code>shouldError(params) : boolean</code> [optional] <a href="#-code-shoulderror-params-boolean-code-optional-" class="anchor___j3LpN">#</a></h4><blockquote>
+<p>An optional function you may provide to have full control over when sync
+validation happens. Your <code>shouldError()</code> function will be given an object with
+the following values:</p>
+<h5 class="heading___2W8-L" id="-code-values-object-code-"><code>values : Object</code> <a href="#-code-values-object-code-" class="anchor___j3LpN">#</a></h5><p>The values in the form of <code>{ field1: &#39;value1&#39;, field2: &#39;value2&#39; }</code>.</p>
+<h5 class="heading___2W8-L" id="-code-nextprops-object-code-"><code>nextProps : Object</code> <a href="#-code-nextprops-object-code-" class="anchor___j3LpN">#</a></h5><p>The next props.</p>
+<h5 class="heading___2W8-L" id="-code-props-object-code-"><code>props : Object</code> <a href="#-code-props-object-code-" class="anchor___j3LpN">#</a></h5><p>The current props.</p>
+<h5 class="heading___2W8-L" id="-code-initialrender-boolean-code-"><code>initialRender : boolean</code> <a href="#-code-initialrender-boolean-code-" class="anchor___j3LpN">#</a></h5><p><code>true</code> if the form is being initially rendered.</p>
+<h5 class="heading___2W8-L" id="-code-structure-object-code-"><code>structure : Object</code> <a href="#-code-structure-object-code-" class="anchor___j3LpN">#</a></h5><p>The structure object being used internally for values. You may wish to use
+<code>deepEqual</code> from the structure.</p>
+</blockquote>
+<h4 class="heading___2W8-L" id="-del-code-shouldvalidate-params-boolean-code-del-optional-strong-deprecated-strong-"><del><code>shouldValidate(params) : boolean</code></del> [optional] <strong>DEPRECATED</strong> <a href="#-del-code-shouldvalidate-params-boolean-code-del-optional-strong-deprecated-strong-" class="anchor___j3LpN">#</a></h4><blockquote>
+<p><strong> DEPRECATED: Use <code>shouldError()</code> and <code>shouldWarn()</code>. Will be removed in
+v8.</strong></p>
+<p>An optional function you may provide to have full control over when sync
+validation happens. Your <code>shouldValidate()</code> function will be given an object
+with the following values:</p>
+<h5 class="heading___2W8-L" id="-code-values-object-code-"><code>values : Object</code> <a href="#-code-values-object-code-" class="anchor___j3LpN">#</a></h5><p>The values in the form of <code>{ field1: &#39;value1&#39;, field2: &#39;value2&#39; }</code>.</p>
+<h5 class="heading___2W8-L" id="-code-nextprops-object-code-"><code>nextProps : Object</code> <a href="#-code-nextprops-object-code-" class="anchor___j3LpN">#</a></h5><p>The next props.</p>
+<h5 class="heading___2W8-L" id="-code-props-object-code-"><code>props : Object</code> <a href="#-code-props-object-code-" class="anchor___j3LpN">#</a></h5><p>The current props.</p>
+<h5 class="heading___2W8-L" id="-code-initialrender-boolean-code-"><code>initialRender : boolean</code> <a href="#-code-initialrender-boolean-code-" class="anchor___j3LpN">#</a></h5><p><code>true</code> if the form is being initially rendered.</p>
+<h5 class="heading___2W8-L" id="-code-structure-object-code-"><code>structure : Object</code> <a href="#-code-structure-object-code-" class="anchor___j3LpN">#</a></h5><p>The structure object being used internally for values. You may wish to use
+<code>deepEqual</code> from the structure.</p>
+</blockquote>
+<h4 class="heading___2W8-L" id="-code-shouldwarn-params-boolean-code-optional-"><code>shouldWarn(params) : boolean</code> [optional] <a href="#-code-shouldwarn-params-boolean-code-optional-" class="anchor___j3LpN">#</a></h4><blockquote>
+<p>An optional function you may provide to have full control over when sync
+validation happens. Your <code>shouldWarn()</code> function will be given an object with
+the following values:</p>
+<h5 class="heading___2W8-L" id="-code-values-object-code-"><code>values : Object</code> <a href="#-code-values-object-code-" class="anchor___j3LpN">#</a></h5><p>The values in the form of <code>{ field1: &#39;value1&#39;, field2: &#39;value2&#39; }</code>.</p>
+<h5 class="heading___2W8-L" id="-code-nextprops-object-code-"><code>nextProps : Object</code> <a href="#-code-nextprops-object-code-" class="anchor___j3LpN">#</a></h5><p>The next props.</p>
+<h5 class="heading___2W8-L" id="-code-props-object-code-"><code>props : Object</code> <a href="#-code-props-object-code-" class="anchor___j3LpN">#</a></h5><p>The current props.</p>
+<h5 class="heading___2W8-L" id="-code-initialrender-boolean-code-"><code>initialRender : boolean</code> <a href="#-code-initialrender-boolean-code-" class="anchor___j3LpN">#</a></h5><p><code>true</code> if the form is being initially rendered.</p>
+<h5 class="heading___2W8-L" id="-code-structure-object-code-"><code>structure : Object</code> <a href="#-code-structure-object-code-" class="anchor___j3LpN">#</a></h5><p>The structure object being used internally for values. You may wish to use
+<code>deepEqual</code> from the structure.</p>
+</blockquote>
+<h4 class="heading___2W8-L" id="-code-touchonblur-boolean-code-optional-"><code>touchOnBlur : boolean</code> [optional] <a href="#-code-touchonblur-boolean-code-optional-" class="anchor___j3LpN">#</a></h4><blockquote>
+<p>marks fields as <code>touched</code> when the blur action is fired. Defaults to <code>true</code>.</p>
+</blockquote>
+<h4 class="heading___2W8-L" id="-code-touchonchange-boolean-code-optional-"><code>touchOnChange : boolean</code> [optional] <a href="#-code-touchonchange-boolean-code-optional-" class="anchor___j3LpN">#</a></h4><blockquote>
+<p>marks fields as <code>touched</code> when the change action is fired. Defaults to
+<code>false</code>.</p>
+</blockquote>
+<h4 class="heading___2W8-L" id="-code-persistentsubmiterrors-boolean-code-optional-"><code>persistentSubmitErrors : boolean</code> [optional] <a href="#-code-persistentsubmiterrors-boolean-code-optional-" class="anchor___j3LpN">#</a></h4><blockquote>
+<p>do not remove submit errors when the change action is fired. Defaults to
+<code>false</code>.</p>
+</blockquote>
+<h4 class="heading___2W8-L" id="-code-validate-values-object-props-object-gt-errors-object-code-optional-"><code>validate : (values:Object, props:Object) =&gt; errors:Object</code> [optional] <a href="#-code-validate-values-object-props-object-gt-errors-object-code-optional-" class="anchor___j3LpN">#</a></h4><blockquote>
+<p>a synchronous validation function that takes the form values and props passed
+into your component. If validation passes, it should return <code>{}</code>. If
+validation fails, it should return the validation errors in the form <code>{
+field1: &lt;String&gt;, field2: &lt;String&gt; }</code>. Defaults to <code>(values, props) =&gt; ({})</code>.</p>
+<p>See
+<a href="https://redux-form.com/7.2.0/examples/syncValidation/">Synchronous Validation Example</a>
+for more details.</p>
+</blockquote>
+<h4 class="heading___2W8-L" id="-code-warn-values-object-props-object-gt-warnings-object-code-optional-"><code>warn : (values:Object, props:Object) =&gt; warnings:Object</code> [optional] <a href="#-code-warn-values-object-props-object-gt-warnings-object-code-optional-" class="anchor___j3LpN">#</a></h4><blockquote>
+<p>a synchronous warning function that takes the form values and props passed
+into your component. Warnings work the same as validations, but do not mark a
+form as invalid. If the warning check passes, it should return <code>{}</code>. If the
+check fails, it should return the warnings in the form <code>{ field1: &lt;String&gt;,
+field2: &lt;String&gt; }</code>. Defaults to <code>(values, props) =&gt; ({})</code>.</p>
+</blockquote>
+<h2 class="heading___2W8-L" id="instance-api">Instance API <a href="#instance-api" class="anchor___j3LpN">#</a></h2><p>The following are methods or properties that you can access on an instance of
+your decorated form component.</p>
+<h4 class="heading___2W8-L" id="-code-dirty-boolean-code-"><code>dirty : boolean</code> <a href="#-code-dirty-boolean-code-" class="anchor___j3LpN">#</a></h4><p><code>true</code> when the current form values are different from the <code>initialValues</code>,
+<code>false</code> otherwise.</p>
+<h4 class="heading___2W8-L" id="-code-fieldlist-array-code-"><code>fieldList : Array</code> <a href="#-code-fieldlist-array-code-" class="anchor___j3LpN">#</a></h4><p>An array of strings representing all the fields in the form. Mainly useful for
+testing.</p>
+<h4 class="heading___2W8-L" id="-code-invalid-boolean-code-"><code>invalid : boolean</code> <a href="#-code-invalid-boolean-code-" class="anchor___j3LpN">#</a></h4><p><code>true</code> when the form is invalid (has validation errors), <code>false</code> otherwise.</p>
+<h4 class="heading___2W8-L" id="-code-pristine-boolean-code-"><code>pristine : boolean</code> <a href="#-code-pristine-boolean-code-" class="anchor___j3LpN">#</a></h4><p><code>true</code> when the current form values are the same as the <code>initialValues</code>, <code>false</code>
+otherwise.</p>
+<h4 class="heading___2W8-L" id="-code-reset-void-code-"><code>reset() : void</code> <a href="#-code-reset-void-code-" class="anchor___j3LpN">#</a></h4><p>Resets the form to the <code>initialValues</code>. It will be <code>pristine</code> after reset.</p>
+<h4 class="heading___2W8-L" id="-code-submit-promise-code-"><code>submit() : Promise</code> <a href="#-code-submit-promise-code-" class="anchor___j3LpN">#</a></h4><p>Submits the form. [You&#39;d never have guessed that, right?] Returns a promise that
+will be resolved when the form is submitted successfully, or rejected if the
+submission fails.</p>
+<h4 class="heading___2W8-L" id="-code-valid-boolean-code-"><code>valid : boolean</code> <a href="#-code-valid-boolean-code-" class="anchor___j3LpN">#</a></h4><p><code>true</code> when the form is valid (has no validation errors), <code>false</code> otherwise.</p>
+<h4 class="heading___2W8-L" id="-code-values-object-code-"><code>values : Object</code> <a href="#-code-values-object-code-" class="anchor___j3LpN">#</a></h4><p>The current values of all the fields in the form.</p>
+<h4 class="heading___2W8-L" id="-code-wrappedinstance-reactelement-code-"><code>wrappedInstance : ReactElement</code> <a href="#-code-wrappedinstance-reactelement-code-" class="anchor___j3LpN">#</a></h4><p>A reference to the instance of the component you decorated with <code>reduxForm()</code>.
+Mainly useful for testing.</p>
+</div></div></div><div class="footer___1oh0h"><div class="bsa-cpc sc-bdVaJa lfLfxR"></div><div>Created by Erik Rasmussen</div><div>Got questions? Ask for help:<a class="help___3OayI" href="https://stackoverflow.com/questions/ask?tags=redux-form" title="Stack Overflow" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i></a><a class="help___3OayI" href="https://github.com/erikras/redux-form/issues/new" title="Github" target="_blank"><i class="fa fa-fw fa-github"></i></a></div><div><a href="https://twitter.com/erikras" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @erikras</a><a href="https://twitter.com/ReduxForm" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ReduxForm</a></div></div></div></div>
   </div>
   <script src="https://unpkg.com/react@15.6.1/dist/react.min.js" integrity="sha384-u/3By6KAUETM5AnedAbB9xV0qLxlsRyVBi8mEekTeqD468SBVx2FXEm+1lf85M7c" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/react-dom@15.6.1/dist/react-dom.min.js" integrity="sha384-GfT+iyYg21YqdPMH/FWlWLugDiK/neASGRCN8yWPB2Hlam+uP7J0lIgPcbCeHoVG" crossorigin="anonymous"></script>
