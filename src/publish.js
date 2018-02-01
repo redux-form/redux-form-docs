@@ -14,7 +14,7 @@ const fetch = createFetch(
 
 const makeCallback = (resolve, reject) => error => {
   if (error) {
-    console.error(error)  // eslint-disable-line
+    console.error(error) // eslint-disable-line
     reject(error)
   } else {
     resolve()
@@ -29,12 +29,13 @@ const mkdir = path =>
     }
   })
 const writeFile = (path, contents) =>
-  new Promise((resolve, reject) => fs.writeFile(path, contents, makeCallback(resolve, reject)))
+  new Promise((resolve, reject) =>
+    fs.writeFile(path, contents, makeCallback(resolve, reject))
+  )
 
-
-const version = process.argv[ 2 ]
+const version = process.argv[2]
 if (!version) {
-  console.error('No version specified!')  // eslint-disable-line
+  console.error('No version specified!') // eslint-disable-line
   process.exit(1)
 }
 
@@ -43,26 +44,30 @@ const publish = (pages, breadcrumbs = []) =>
   forIn(pages, ({ file, title, children }, path) => {
     const dest = `${version}${path}`
     const breadcrumb = { path: `https://redux-form.com/${dest}`, title }
-    promises.push(fetch(file)
-      .then(response => mkdir(dest)
-        .then(() => writeFile(
-          path.length > 1 ? `${dest}/index.html` : `${version}/index.html`,
-          render({
-            component: <Markdown content={response.textString}/>,
-            path,
-            title,
-            version,
-            breadcrumbs: [ ...breadcrumbs, breadcrumb ]
-          })))))
+    promises.push(
+      fetch(file).then(response =>
+        mkdir(dest).then(() =>
+          writeFile(
+            path.length > 1 ? `${dest}/index.html` : `${version}/index.html`,
+            render({
+              component: <Markdown content={response.textString} />,
+              path,
+              title,
+              version,
+              breadcrumbs: [...breadcrumbs, breadcrumb]
+            })
+          )
+        )
+      )
+    )
     if (children) {
-      publish(children, [ ...breadcrumbs, breadcrumb ])
+      publish(children, [...breadcrumbs, breadcrumb])
     }
   })
 
 const pages = JSON.parse(fs.readFileSync('pages.json').toString())
 publish(pages)
-Promise.all(promises)
-  .then(() => {
-    console.info('Done!')  // eslint-disable-line
-    process.exit(0)
-  })
+Promise.all(promises).then(() => {
+  console.info('Done!') // eslint-disable-line
+  process.exit(0)
+})
