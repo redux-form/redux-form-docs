@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>Redux Form - `formValueSelector()`</title>
+    <link href="https://unpkg.com/redux-form-website-template/dist/bundle.css"
+      media="screen, projection" rel="stylesheet" type="text/css"/>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"
+          media="screen, projection" rel="stylesheet" type="text/css"/>
+    <meta itemprop="name" content="Redux Form"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Redux Form"/>
+    <meta property="og:site_name" content="Redux Form"/>
+    <meta property="og:description" content="The best way to manage your form state in Redux."/>
+    <meta property="og:image" content="logo.png"/>
+    <meta property="twitter:site" content="@erikras"/>
+    <meta property="twitter:creator" content="@erikras"/>
+    <style type="text/css">
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+  <div id="content">
+    <div class="app___3P8ep hasNav___1KF_W"><div class="nav___11xa5"><button type="button"></button><div class="overlay___1GMox"><i class="fa fa-times"></i> Close</div><div class="placeholder___TzF1K"></div><nav class="menu___12xDU"><a href="https://redux-form.com/8.0.1" class="brand___1qRUu">Redux Form</a><div><div id="codefund_ad" class="benevolent-sponsor template-image-only" style="min-height:211px"></div></div><a href="https://redux-form.com/8.0.1/docs/GettingStarted.md" class="">Getting Started</a><a href="https://redux-form.com/8.0.1/docs/MigrationGuide.md" class=""><code>v6</code> Migration Guide</a><a href="https://redux-form.com/8.0.1/docs/ValueLifecycle.md" class="">Value Lifecycle</a><a href="https://redux-form.com/8.0.1/docs/Flow.md" class="">Flow</a><a href="https://redux-form.com/8.0.1/docs/api" class="">API</a><a href="https://redux-form.com/8.0.1/docs/api/ReduxForm.md" class="indent1___4iVnL"><code>reduxForm()</code></a><a href="https://redux-form.com/8.0.1/docs/api/Props.md" class="indent1___4iVnL"><code>props</code></a><a href="https://redux-form.com/8.0.1/docs/api/Field.md" class="indent1___4iVnL"><code>Field</code></a><a href="https://redux-form.com/8.0.1/docs/api/Fields.md" class="indent1___4iVnL"><code>Fields</code></a><a href="https://redux-form.com/8.0.1/docs/api/FieldArray.md" class="indent1___4iVnL"><code>FieldArray</code></a><a href="https://redux-form.com/8.0.1/docs/api/Form.md" class="indent1___4iVnL"><code>Form</code></a><a href="https://redux-form.com/8.0.1/docs/api/FormName.md" class="indent1___4iVnL"><code>FormName</code></a><a href="https://redux-form.com/8.0.1/docs/api/FormSection.md" class="indent1___4iVnL"><code>FormSection</code></a><a href="https://redux-form.com/8.0.1/docs/api/FormValues.md" class="indent1___4iVnL"><code>formValues()</code></a><a href="https://redux-form.com/8.0.1/docs/api/FormValueSelector.md" class="indent1___4iVnL active___2eU59"><code>formValueSelector()</code></a><a href="https://redux-form.com/8.0.1/docs/api/Reducer.md" class="indent1___4iVnL"><code>reducer</code></a><a href="https://redux-form.com/8.0.1/docs/api/ReducerPlugin.md" class="indent2___2PiOO"><code>reducer.plugin()</code></a><a href="https://redux-form.com/8.0.1/docs/api/SubmissionError.md" class="indent1___4iVnL"><code>SubmissionError</code></a><a href="https://redux-form.com/8.0.1/docs/api/ActionCreators.md" class="indent1___4iVnL">Action Creators</a><a href="https://redux-form.com/8.0.1/docs/api/Selectors.md" class="indent1___4iVnL">Selectors</a><a href="https://redux-form.com/8.0.1/docs/faq" class="">FAQ</a><a href="https://redux-form.com/8.0.1/examples" class="">Examples</a><a href="https://redux-form.com/8.0.1/examples/simple" class="indent1___4iVnL">Simple Form</a><a href="https://redux-form.com/8.0.1/examples/syncValidation" class="indent1___4iVnL">Sync Validation</a><a href="https://redux-form.com/8.0.1/examples/fieldLevelValidation" class="indent1___4iVnL">Field-Level Validation</a><a href="https://redux-form.com/8.0.1/examples/submitValidation" class="indent1___4iVnL">Submit Validation</a><a href="https://redux-form.com/8.0.1/examples/asyncValidation" class="indent1___4iVnL">Async Blur Validation</a><a href="https://redux-form.com/8.0.1/examples/asyncChangeValidation" class="indent1___4iVnL">Async Change Validation</a><a href="https://redux-form.com/8.0.1/examples/initializeFromState" class="indent1___4iVnL">Initializing from State</a><a href="https://redux-form.com/8.0.1/examples/selectingFormValues" class="indent1___4iVnL">Selecting Form Values</a><a href="https://redux-form.com/8.0.1/examples/fieldArrays" class="indent1___4iVnL">Field Arrays</a><a href="https://redux-form.com/8.0.1/examples/remoteSubmit" class="indent1___4iVnL">Remote Submit</a><a href="https://redux-form.com/8.0.1/examples/normalizing" class="indent1___4iVnL">Normalizing</a><a href="https://redux-form.com/8.0.1/examples/immutable" class="indent1___4iVnL">Immutable JS</a><a href="https://redux-form.com/8.0.1/examples/wizard" class="indent1___4iVnL">Wizard Form</a><a href="https://redux-form.com/8.0.1/examples/material-ui" class="indent1___4iVnL">Material UI</a><a href="https://redux-form.com/8.0.1/examples/react-widgets" class="indent1___4iVnL">React Widgets</a><a href="https://redux-form.com/8.0.1/docs/DocumentationVersions.md" class="">Older Versions</a></nav></div><div class="contentAndFooter___kE2nt"><div class="topNav___sBW8S"><a href="https://redux-form.com" class="brand___YAZl-"></a><a class="github___3-vRv" href="https://github.com/erikras/redux-form" title="Github" target="_blank"><i class="fa fa-fw fa-github"></i></a></div><div class="content___3TVHp"><div><ol class="breadcrumbs___1BHo6"><li><a href="https://redux-form.com/8.0.1/">Redux Form</a></li><li><a href="https://redux-form.com/8.0.1/docs/api">API</a></li><li><code>formValueSelector()</code></li></ol><div><h1 class="heading___2W8-L" id="-code-formvalueselector-form-string-getformstate-function-code-"><code>formValueSelector(form:String, [getFormState:Function])</code> <a href="#-code-formvalueselector-form-string-getformstate-function-code-" class="anchor___j3LpN">#</a></h1><p><a href="https://github.com/erikras/redux-form/blob/master/src/formValueSelector.js"><code>View source on GitHub</code></a></p>
+<blockquote>
+<p><code>formValueSelector</code> is a &quot;selector&quot; API to make it easier to <code>connect()</code> to
+form values. It <em>creates</em> a selector function that accepts field names and
+returns corresponding values from the named form.</p>
+</blockquote>
+<h2 class="heading___2W8-L" id="importing">Importing <a href="#importing" class="anchor___j3LpN">#</a></h2><pre class="language-jsx"><code class="language-jsx">
+<span class="token keyword" >var</span> formValueSelector <span class="token operator" >=</span> <span class="token function" >require</span><span class="token punctuation" >(</span><span class="token string" >'redux-form'</span><span class="token punctuation" >)</span><span class="token punctuation" >.</span>formValueSelector <span class="token comment" spellcheck="true">// ES5</span>
+</code></pre>
+
+<pre class="language-jsx"><code class="language-jsx">
+<span class="token keyword" >import</span> <span class="token punctuation" >{</span> formValueSelector <span class="token punctuation" >}</span> <span class="token keyword" >from</span> <span class="token string" >'redux-form'</span> <span class="token comment" spellcheck="true">// ES6</span>
+</code></pre>
+
+<h2 class="heading___2W8-L" id="parameters">Parameters <a href="#parameters" class="anchor___j3LpN">#</a></h2><h3 class="heading___2W8-L" id="-code-form-string-code-required-"><code>form : String</code> [required] <a href="#-code-form-string-code-required-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>The name of the form you are connecting to. Must be the same as the <code>form</code>
+config value you gave to
+<a href="https://redux-form.com/8.0.1/docs/api/ReduxForm.md/"><code>reduxForm()</code></a>.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-getformstate-function-code-optional-"><code>getFormState : Function</code> [optional] <a href="#-code-getformstate-function-code-optional-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>If you are using the <code>getFormState()</code> config parameter to keep the
+<code>redux-form</code> reducer at a place in your Redux store other than <code>state.form</code>,
+you must also provide the same function here to get the slice of Redux store
+where the <code>redux-form</code> reducer is mounted. Defaults to <code>state =&gt; state.form</code>.</p>
+</blockquote>
+<h2 class="heading___2W8-L" id="selector">Selector <a href="#selector" class="anchor___j3LpN">#</a></h2><p>The function returned from <code>formValueSelector()</code> has the following structure:</p>
+<h3 class="heading___2W8-L" id="selector-state-object-field-string-">selector(state:Object, ...field:String) <a href="#selector-state-object-field-string-" class="anchor___j3LpN">#</a></h3><h4 class="heading___2W8-L" id="-code-state-object-code-required-"><code>state : Object</code> [required] <a href="#-code-state-object-code-required-" class="anchor___j3LpN">#</a></h4><blockquote>
+<p>The global Redux state given to <code>mapStateToProps</code>.</p>
+</blockquote>
+<h4 class="heading___2W8-L" id="-code-field-string-code-required-"><code>...field : String</code> [required] <a href="#-code-field-string-code-required-" class="anchor___j3LpN">#</a></h4><blockquote>
+<p>The field, or fields, you want to select. If you provide only one field name,
+the function will return the value of that field. If you provide more than one
+field name, it will return an object mapping fields to values. If your field
+are &quot;deep&quot; (i.e. has one or more <code>.</code> in the name), the structure you get back
+will also be deep. e.g. If your fields are <code>&#39;a.b&#39;</code> and <code>&#39;a.c&#39;</code>, the resulting
+structure will be <code>{ a: { b: &#39;bValue&#39;, c: &#39;cValue&#39; } }</code>.</p>
+</blockquote>
+<h2 class="heading___2W8-L" id="usage">Usage <a href="#usage" class="anchor___j3LpN">#</a></h2><p>The first thing you do is create a selector for your form name.</p>
+<pre class="language-jsx"><code class="language-jsx">
+<span class="token keyword" >const</span> selector <span class="token operator" >=</span> <span class="token function" >formValueSelector</span><span class="token punctuation" >(</span><span class="token string" >'myFormName'</span><span class="token punctuation" >)</span>
+</code></pre>
+
+<p>Then, there are several ways to use the selector that was created.</p>
+<h3 class="heading___2W8-L" id="1-select-fields-individually">1. Select fields individually <a href="#1-select-fields-individually" class="anchor___j3LpN">#</a></h3><pre class="language-jsx"><code class="language-jsx">
+<span class="token function" >connect</span><span class="token punctuation" >(</span>state <span class="token operator" >=</span><span class="token operator" >></span> <span class="token punctuation" >(</span><span class="token punctuation" >{</span>
+  firstValue<span class="token punctuation" >:</span> <span class="token function" >selector</span><span class="token punctuation" >(</span>state<span class="token punctuation" >,</span> <span class="token string" >'first'</span><span class="token punctuation" >)</span><span class="token punctuation" >,</span>
+  secondValue<span class="token punctuation" >:</span> <span class="token function" >selector</span><span class="token punctuation" >(</span>state<span class="token punctuation" >,</span> <span class="token string" >'second'</span><span class="token punctuation" >)</span>
+<span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >)</span><span class="token punctuation" >(</span>MyFormComponent<span class="token punctuation" >)</span>
+</code></pre>
+
+<h3 class="heading___2W8-L" id="2-select-multiple-fields-as-a-group-into-a-grouped-prop">2. Select multiple fields as a group into a grouped prop <a href="#2-select-multiple-fields-as-a-group-into-a-grouped-prop" class="anchor___j3LpN">#</a></h3><pre class="language-jsx"><code class="language-jsx">
+<span class="token function" >connect</span><span class="token punctuation" >(</span>state <span class="token operator" >=</span><span class="token operator" >></span> <span class="token punctuation" >(</span><span class="token punctuation" >{</span>
+  myValues<span class="token punctuation" >:</span> <span class="token function" >selector</span><span class="token punctuation" >(</span>state<span class="token punctuation" >,</span> <span class="token string" >'first'</span><span class="token punctuation" >,</span> <span class="token string" >'second'</span><span class="token punctuation" >)</span>
+<span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >)</span><span class="token punctuation" >(</span>MyFormComponent<span class="token punctuation" >)</span>
+</code></pre>
+
+<h3 class="heading___2W8-L" id="3-use-the-selector-as-code-mapstatetoprops-code-">3. Use the selector as <code>mapStateToProps</code> <a href="#3-use-the-selector-as-code-mapstatetoprops-code-" class="anchor___j3LpN">#</a></h3><p>If you don&#39;t need any other props from the state, the selector itself works just
+fine as <code>mapStateToProps</code> if you are selecting multiple fields.</p>
+<pre class="language-jsx"><code class="language-jsx">
+<span class="token function" >connect</span><span class="token punctuation" >(</span>state <span class="token operator" >=</span><span class="token operator" >></span> <span class="token function" >selector</span><span class="token punctuation" >(</span>state<span class="token punctuation" >,</span> <span class="token string" >'first'</span><span class="token punctuation" >,</span> <span class="token string" >'second'</span><span class="token punctuation" >)</span><span class="token punctuation" >)</span><span class="token punctuation" >(</span>MyFormComponent<span class="token punctuation" >)</span>
+</code></pre>
+
+<h2 class="heading___2W8-L" id="example">Example <a href="#example" class="anchor___j3LpN">#</a></h2><p>See the
+<a href="https://redux-form.com/8.0.1/examples/selectingFormValues/">Selecting Form Values</a>
+example.</p>
+</div></div></div><div class="footer___1oh0h"><div>Created by Erik Rasmussen</div><div>Got questions? Ask for help:<a class="help___3OayI" href="https://stackoverflow.com/questions/ask?tags=redux-form" title="Stack Overflow" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i></a><a class="help___3OayI" href="https://github.com/erikras/redux-form/issues/new" title="Github" target="_blank"><i class="fa fa-fw fa-github"></i></a></div><div><a href="https://twitter.com/erikras" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @erikras</a><a href="https://twitter.com/ReduxForm" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ReduxForm</a></div></div></div></div>
+  </div>
+  <script src="https://unpkg.com/react@15.6.1/dist/react.min.js" integrity="sha384-u/3By6KAUETM5AnedAbB9xV0qLxlsRyVBi8mEekTeqD468SBVx2FXEm+1lf85M7c" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@15.6.1/dist/react-dom.min.js" integrity="sha384-GfT+iyYg21YqdPMH/FWlWLugDiK/neASGRCN8yWPB2Hlam+uP7J0lIgPcbCeHoVG" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/redux-form-doc-version-checker/dist/doc-check.umd.min.js"></script>
+  <script src="https://unpkg.com/redux-form-website-template/dist/bundle.js"></script>
+  <script>
+    (function(){
+      if(typeof _bsa !== 'undefined' && _bsa) {
+        _bsa.init('default', 'CKYDV5QM', 'placement:reduxformcom', {
+          target: '.bsa-cpc',
+          align: 'horizontal',
+          disable_css: 'true'
+        })
+      }
+    })()
+  </script>
+  <script>initReact({"version":"8.0.1","path":"/docs/api/FormValueSelector.md","breadcrumbs":[{"path":"https://redux-form.com/8.0.1/","title":"Redux Form"},{"path":"https://redux-form.com/8.0.1/docs/api","title":"API"},{"path":"https://redux-form.com/8.0.1/docs/api/FormValueSelector.md","title":"`formValueSelector()`"}]})</script>
+  <script>
+    (function(i,s,o,g,r,a,m){i[ 'GoogleAnalyticsObject' ] = r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-69298417-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </body>
+  </html>
