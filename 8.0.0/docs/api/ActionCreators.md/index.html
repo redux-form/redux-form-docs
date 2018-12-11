@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>Redux Form - Action Creators</title>
+    <link href="https://unpkg.com/redux-form-website-template/dist/bundle.css"
+      media="screen, projection" rel="stylesheet" type="text/css"/>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"
+          media="screen, projection" rel="stylesheet" type="text/css"/>
+    <meta itemprop="name" content="Redux Form"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Redux Form"/>
+    <meta property="og:site_name" content="Redux Form"/>
+    <meta property="og:description" content="The best way to manage your form state in Redux."/>
+    <meta property="og:image" content="logo.png"/>
+    <meta property="twitter:site" content="@erikras"/>
+    <meta property="twitter:creator" content="@erikras"/>
+    <style type="text/css">
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+  <div id="content">
+    <div class="app___3P8ep hasNav___1KF_W"><div class="nav___11xa5"><button type="button"></button><div class="overlay___1GMox"><i class="fa fa-times"></i> Close</div><div class="placeholder___TzF1K"></div><nav class="menu___12xDU"><a href="https://redux-form.com/8.0.0" class="brand___1qRUu">Redux Form</a><div><div id="codefund_ad" class="benevolent-sponsor template-image-only" style="min-height:211px"></div></div><a href="https://redux-form.com/8.0.0/docs/GettingStarted.md" class="">Getting Started</a><a href="https://redux-form.com/8.0.0/docs/MigrationGuide.md" class=""><code>v6</code> Migration Guide</a><a href="https://redux-form.com/8.0.0/docs/ValueLifecycle.md" class="">Value Lifecycle</a><a href="https://redux-form.com/8.0.0/docs/Flow.md" class="">Flow</a><a href="https://redux-form.com/8.0.0/docs/api" class="">API</a><a href="https://redux-form.com/8.0.0/docs/api/ReduxForm.md" class="indent1___4iVnL"><code>reduxForm()</code></a><a href="https://redux-form.com/8.0.0/docs/api/Props.md" class="indent1___4iVnL"><code>props</code></a><a href="https://redux-form.com/8.0.0/docs/api/Field.md" class="indent1___4iVnL"><code>Field</code></a><a href="https://redux-form.com/8.0.0/docs/api/Fields.md" class="indent1___4iVnL"><code>Fields</code></a><a href="https://redux-form.com/8.0.0/docs/api/FieldArray.md" class="indent1___4iVnL"><code>FieldArray</code></a><a href="https://redux-form.com/8.0.0/docs/api/Form.md" class="indent1___4iVnL"><code>Form</code></a><a href="https://redux-form.com/8.0.0/docs/api/FormName.md" class="indent1___4iVnL"><code>FormName</code></a><a href="https://redux-form.com/8.0.0/docs/api/FormSection.md" class="indent1___4iVnL"><code>FormSection</code></a><a href="https://redux-form.com/8.0.0/docs/api/FormValues.md" class="indent1___4iVnL"><code>formValues()</code></a><a href="https://redux-form.com/8.0.0/docs/api/FormValueSelector.md" class="indent1___4iVnL"><code>formValueSelector()</code></a><a href="https://redux-form.com/8.0.0/docs/api/Reducer.md" class="indent1___4iVnL"><code>reducer</code></a><a href="https://redux-form.com/8.0.0/docs/api/ReducerPlugin.md" class="indent2___2PiOO"><code>reducer.plugin()</code></a><a href="https://redux-form.com/8.0.0/docs/api/SubmissionError.md" class="indent1___4iVnL"><code>SubmissionError</code></a><a href="https://redux-form.com/8.0.0/docs/api/ActionCreators.md" class="indent1___4iVnL active___2eU59">Action Creators</a><a href="https://redux-form.com/8.0.0/docs/api/Selectors.md" class="indent1___4iVnL">Selectors</a><a href="https://redux-form.com/8.0.0/docs/faq" class="">FAQ</a><a href="https://redux-form.com/8.0.0/examples" class="">Examples</a><a href="https://redux-form.com/8.0.0/examples/simple" class="indent1___4iVnL">Simple Form</a><a href="https://redux-form.com/8.0.0/examples/syncValidation" class="indent1___4iVnL">Sync Validation</a><a href="https://redux-form.com/8.0.0/examples/fieldLevelValidation" class="indent1___4iVnL">Field-Level Validation</a><a href="https://redux-form.com/8.0.0/examples/submitValidation" class="indent1___4iVnL">Submit Validation</a><a href="https://redux-form.com/8.0.0/examples/asyncValidation" class="indent1___4iVnL">Async Blur Validation</a><a href="https://redux-form.com/8.0.0/examples/asyncChangeValidation" class="indent1___4iVnL">Async Change Validation</a><a href="https://redux-form.com/8.0.0/examples/initializeFromState" class="indent1___4iVnL">Initializing from State</a><a href="https://redux-form.com/8.0.0/examples/selectingFormValues" class="indent1___4iVnL">Selecting Form Values</a><a href="https://redux-form.com/8.0.0/examples/fieldArrays" class="indent1___4iVnL">Field Arrays</a><a href="https://redux-form.com/8.0.0/examples/remoteSubmit" class="indent1___4iVnL">Remote Submit</a><a href="https://redux-form.com/8.0.0/examples/normalizing" class="indent1___4iVnL">Normalizing</a><a href="https://redux-form.com/8.0.0/examples/immutable" class="indent1___4iVnL">Immutable JS</a><a href="https://redux-form.com/8.0.0/examples/wizard" class="indent1___4iVnL">Wizard Form</a><a href="https://redux-form.com/8.0.0/examples/material-ui" class="indent1___4iVnL">Material UI</a><a href="https://redux-form.com/8.0.0/examples/react-widgets" class="indent1___4iVnL">React Widgets</a><a href="https://redux-form.com/8.0.0/docs/DocumentationVersions.md" class="">Older Versions</a></nav></div><div class="contentAndFooter___kE2nt"><div class="topNav___sBW8S"><a href="https://redux-form.com" class="brand___YAZl-"></a><a class="github___3-vRv" href="https://github.com/erikras/redux-form" title="Github" target="_blank"><i class="fa fa-fw fa-github"></i></a></div><div class="content___3TVHp"><div><ol class="breadcrumbs___1BHo6"><li><a href="https://redux-form.com/8.0.0/">Redux Form</a></li><li><a href="https://redux-form.com/8.0.0/docs/api">API</a></li><li>Action Creators</li></ol><div><h1 class="heading___2W8-L" id="action-creators">Action Creators <a href="#action-creators" class="anchor___j3LpN">#</a></h1><p><a href="https://github.com/erikras/redux-form/blob/master/src/actions.js"><code>View source on GitHub</code></a></p>
+<p><code>redux-form</code> exports all of its internal action creators, allowing you complete
+control to dispatch any action you wish. However, it is recommended that you use
+the actions passed as props to your component for most of your needs, as they
+are already bound to <code>dispatch</code>, your form, and, in the case of field-specific
+actions such as <code>CHANGE</code> or <code>BLUR</code>, the specific field.</p>
+<h3 class="heading___2W8-L" id="-code-arrayinsert-form-string-field-string-index-number-value-any-code-"><code>arrayInsert(form:String, field:String, index:Number, value:any)</code> <a href="#-code-arrayinsert-form-string-field-string-index-number-value-any-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Inserts an item into a field array at the specified index</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-arraymove-form-string-field-string-from-number-to-number-code-"><code>arrayMove(form:String, field:String, from:Number, to:Number)</code> <a href="#-code-arraymove-form-string-field-string-from-number-to-number-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Moves an item from one index in the array to another. In effect, it performs a
+remove and an insert, so the item already at the <code>to</code> position will be bumped
+to a higher index, not overwritten.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-arraypop-form-string-field-string-code-"><code>arrayPop(form:String, field:String)</code> <a href="#-code-arraypop-form-string-field-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Removes an item from the end of a field array</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-arraypush-form-string-field-string-value-any-code-"><code>arrayPush(form:String, field:String, value:any)</code> <a href="#-code-arraypush-form-string-field-string-value-any-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Appends an item to the end of a field array</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-arrayremove-form-string-field-string-index-number-code-"><code>arrayRemove(form:String, field:String, index:Number)</code> <a href="#-code-arrayremove-form-string-field-string-index-number-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Removes an item at the specified index from a field array</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-arrayremoveall-form-string-field-string-code-"><code>arrayRemoveAll(form:String, field:String)</code> <a href="#-code-arrayremoveall-form-string-field-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Removes all the items from the specified array.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-arrayshift-form-string-field-string-code-"><code>arrayShift(form:String, field:String)</code> <a href="#-code-arrayshift-form-string-field-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Removes an item from the beginning of a field array</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-arraysplice-form-string-field-string-index-number-removenum-number-value-any-code-"><code>arraySplice(form:String, field:String, index:Number, removeNum:Number, value:any)</code> <a href="#-code-arraysplice-form-string-field-string-index-number-removenum-number-value-any-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p><strong>ADVANCED USAGE</strong> - Inserts and/or removes items from a field array. Works
+similarly to
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice"><code>Array.splice</code></a>.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-arrayswap-form-string-field-string-indexa-number-indexb-number-code-"><code>arraySwap(form:String, field:String, indexA:Number, indexB:Number)</code> <a href="#-code-arrayswap-form-string-field-string-indexa-number-indexb-number-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Swaps two items at the specified indexes in a field array</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-arrayunshift-form-string-field-string-value-any-code-"><code>arrayUnshift(form:String, field:String, value:any)</code> <a href="#-code-arrayunshift-form-string-field-string-value-any-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Inserts an item at the beginning of a field array</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-autofill-form-string-field-string-value-string-code-"><code>autofill(form:String, field:String, value:String)</code> <a href="#-code-autofill-form-string-field-string-value-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Saves the value to the field and sets its <code>autofilled</code> property to <code>true</code>.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-blur-form-string-field-string-value-any-code-"><code>blur(form:String, field:String, value:any)</code> <a href="#-code-blur-form-string-field-string-value-any-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Saves the value to the field.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-change-form-string-field-string-value-any-code-"><code>change(form:String, field:String, value:any)</code> <a href="#-code-change-form-string-field-string-value-any-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Saves the value to the field.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-clearasyncerror-form-string-field-string-code-"><code>clearAsyncError(form:String, field:String)</code> <a href="#-code-clearasyncerror-form-string-field-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Removes <code>asyncErrors</code> for the field.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-clearsubmiterrors-form-string-code-"><code>clearSubmitErrors(form:String)</code> <a href="#-code-clearsubmiterrors-form-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Removes <code>submitErrors</code> and <code>error</code>.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-clearfields-form-string-keeptouched-boolean-persistentsubmiterrors-boolean-fields-string-code-"><code>clearFields(form:String, keepTouched: boolean, persistentSubmitErrors: boolean, ...fields:String)</code> <a href="#-code-clearfields-form-string-keeptouched-boolean-persistentsubmiterrors-boolean-fields-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Cleans fields values for all the fields passed in.</p>
+<p>If the <code>keepTouched</code> parameter is <code>true</code>, the values of currently touched
+fields will be retained. </p>
+<p>If the <code>persistentSubmitErrors</code> parameter is <code>true</code>,
+the values of currently submit errors fields will be retained</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-destroy-forms-string-code-"><code>destroy(...forms:String)</code> <a href="#-code-destroy-forms-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Destroys the forms, removing all of their state.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-focus-form-string-field-string-code-"><code>focus(form:String, field:String)</code> <a href="#-code-focus-form-string-field-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Marks the given field as <code>active</code> and <code>visited</code>.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-initialize-form-string-data-object-keepdirty-boolean-options-keepdirty-boolean-keepsubmitsucceeded-boolean-updateunregisteredfields-boolean-keepvalues-boolean-code-"><code>initialize(form:String, data:Object, [keepDirty:boolean], [options:{keepDirty:boolean, keepSubmitSucceeded:boolean, updateUnregisteredFields:boolean, keepValues:boolean}])</code> <a href="#-code-initialize-form-string-data-object-keepdirty-boolean-options-keepdirty-boolean-keepsubmitsucceeded-boolean-updateunregisteredfields-boolean-keepvalues-boolean-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Sets the initial values in the form with which future data values will be
+compared to calculate <code>dirty</code> and <code>pristine</code>. The <code>data</code> parameter may contain
+deep nested array and object values that match the shape of your form fields.</p>
+<p>If the <code>keepDirty</code> parameter is <code>true</code>, the values of currently dirty fields
+will be retained to avoid overwriting user edits. (<code>keepDirty</code> can appear as
+either the third argument, or a property of <code>options</code> as the 3rd or 4th
+argument, for the sake of backwards compatibility).</p>
+<p>If the <code>keepSubmitSucceeded</code> parameter is <code>true</code>, it will not clear the
+<code>submitSucceeded</code> flag if it is set.</p>
+<p>If the <code>updateUnregisteredFields</code> parameter is <code>true</code>, it will update every
+initialValue if still pristine instead of only registered fields. Highly
+recommended, defaults to false because of non-breaking backwards
+compatibility.</p>
+<p>If the <code>keepValues</code> parameter is <code>true</code>, it will keep the old values and
+initial values.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-registerfield-form-string-name-string-type-string-code-"><code>registerField(form:String, name:String, type:String)</code> <a href="#-code-registerfield-form-string-name-string-type-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Registers a field with the form. The <code>type</code> parameter can be <code>Field</code> or
+<code>FieldArray</code>.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-reset-form-string-code-"><code>reset(form:String)</code> <a href="#-code-reset-form-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Resets the values in the form back to the values passed in with the most recent
+<code>initialize</code> action.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-resetsection-form-string-sections-string-code-"><code>resetSection(form:String, ...sections:String)</code> <a href="#-code-resetsection-form-string-sections-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Resets the values in the form sections back to the values passed in with the most recent
+<code>initialize</code> action.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-setsubmitfailed-form-string-fields-string-code-"><code>setSubmitFailed(form:String, ...fields:String)</code> <a href="#-code-setsubmitfailed-form-string-fields-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Flips <code>submitFailed</code> flag <code>true</code>, removes <code>submitSucceeded</code> and <code>submitting</code>,
+marks all the fields passed in as <code>touched</code>, and if at least one field was
+passed flips <code>anyTouched</code> to <code>true</code>.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-setsubmitsucceeded-form-string-code-"><code>setSubmitSucceeded(form:String)</code> <a href="#-code-setsubmitsucceeded-form-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Flips <code>submitSucceeded</code> flag <code>true</code> and removes <code>submitFailed</code>.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-startasyncvalidation-form-string-code-"><code>startAsyncValidation(form:String)</code> <a href="#-code-startasyncvalidation-form-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Flips the <code>asyncValidating</code> flag <code>true</code>.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-startsubmit-form-string-code-"><code>startSubmit(form:String)</code> <a href="#-code-startsubmit-form-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Flips the <code>submitting</code> flag <code>true</code>.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-stopsubmit-form-string-errors-object-code-"><code>stopSubmit(form:String, errors:Object)</code> <a href="#-code-stopsubmit-form-string-errors-object-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Flips the <code>submitting</code> flag <code>false</code> and populates <code>submitError</code> for each
+field.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-stopasyncvalidation-form-string-errors-object-code-"><code>stopAsyncValidation(form:String, errors:Object)</code> <a href="#-code-stopasyncvalidation-form-string-errors-object-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Flips the <code>asyncValidating</code> flag <code>false</code> and populates <code>asyncError</code> for each
+field.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-submit-form-string-code-"><code>submit(form:String)</code> <a href="#-code-submit-form-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Triggers a submission of the specified form.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-touch-form-string-fields-string-code-"><code>touch(form:String, ...fields:String)</code> <a href="#-code-touch-form-string-fields-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Marks all the fields passed in as <code>touched</code>.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-unregisterfield-form-string-name-string-code-"><code>unregisterField(form:String, name:String)</code> <a href="#-code-unregisterfield-form-string-name-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Unregisters a field with the form.</p>
+</blockquote>
+<h3 class="heading___2W8-L" id="-code-untouch-form-string-fields-string-code-"><code>untouch(form:String, ...fields:String)</code> <a href="#-code-untouch-form-string-fields-string-code-" class="anchor___j3LpN">#</a></h3><blockquote>
+<p>Resets the <code>touched</code> flag for all the fields passed in.</p>
+</blockquote>
+</div></div></div><div class="footer___1oh0h"><div>Created by Erik Rasmussen</div><div>Got questions? Ask for help:<a class="help___3OayI" href="https://stackoverflow.com/questions/ask?tags=redux-form" title="Stack Overflow" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i></a><a class="help___3OayI" href="https://github.com/erikras/redux-form/issues/new" title="Github" target="_blank"><i class="fa fa-fw fa-github"></i></a></div><div><a href="https://twitter.com/erikras" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @erikras</a><a href="https://twitter.com/ReduxForm" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ReduxForm</a></div></div></div></div>
+  </div>
+  <script src="https://unpkg.com/react@15.6.1/dist/react.min.js" integrity="sha384-u/3By6KAUETM5AnedAbB9xV0qLxlsRyVBi8mEekTeqD468SBVx2FXEm+1lf85M7c" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@15.6.1/dist/react-dom.min.js" integrity="sha384-GfT+iyYg21YqdPMH/FWlWLugDiK/neASGRCN8yWPB2Hlam+uP7J0lIgPcbCeHoVG" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/redux-form-doc-version-checker/dist/doc-check.umd.min.js"></script>
+  <script src="https://unpkg.com/redux-form-website-template/dist/bundle.js"></script>
+  <script>
+    (function(){
+      if(typeof _bsa !== 'undefined' && _bsa) {
+        _bsa.init('default', 'CKYDV5QM', 'placement:reduxformcom', {
+          target: '.bsa-cpc',
+          align: 'horizontal',
+          disable_css: 'true'
+        })
+      }
+    })()
+  </script>
+  <script>initReact({"version":"8.0.0","path":"/docs/api/ActionCreators.md","breadcrumbs":[{"path":"https://redux-form.com/8.0.0/","title":"Redux Form"},{"path":"https://redux-form.com/8.0.0/docs/api","title":"API"},{"path":"https://redux-form.com/8.0.0/docs/api/ActionCreators.md","title":"Action Creators"}]})</script>
+  <script>
+    (function(i,s,o,g,r,a,m){i[ 'GoogleAnalyticsObject' ] = r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-69298417-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </body>
+  </html>
