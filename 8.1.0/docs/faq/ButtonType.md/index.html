@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>Redux Form - Why are all my buttons triggering onSubmit?</title>
+    <link href="https://unpkg.com/redux-form-website-template/dist/bundle.css"
+      media="screen, projection" rel="stylesheet" type="text/css"/>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"
+          media="screen, projection" rel="stylesheet" type="text/css"/>
+    <meta itemprop="name" content="Redux Form"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Redux Form"/>
+    <meta property="og:site_name" content="Redux Form"/>
+    <meta property="og:description" content="The best way to manage your form state in Redux."/>
+    <meta property="og:image" content="logo.png"/>
+    <meta property="twitter:site" content="@erikras"/>
+    <meta property="twitter:creator" content="@erikras"/>
+    <style type="text/css">
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+  <div id="content">
+    <div class="app___3P8ep hasNav___1KF_W"><div class="nav___11xa5"><button type="button"></button><div class="overlay___1GMox"><i class="fa fa-times"></i> Close</div><div class="placeholder___TzF1K"></div><nav class="menu___12xDU"><a href="https://redux-form.com/8.1.0" class="brand___1qRUu">Redux Form</a><div><div id="codefund_ad" class="benevolent-sponsor template-image-only" style="min-height:211px"></div></div><a href="https://redux-form.com/8.1.0/docs/GettingStarted.md" class="">Getting Started</a><a href="https://redux-form.com/8.1.0/docs/MigrationGuide.md" class=""><code>v6</code> Migration Guide</a><a href="https://redux-form.com/8.1.0/docs/ValueLifecycle.md" class="">Value Lifecycle</a><a href="https://redux-form.com/8.1.0/docs/Flow.md" class="">Flow</a><a href="https://redux-form.com/8.1.0/docs/api" class="">API</a><a href="https://redux-form.com/8.1.0/docs/api/ReduxForm.md" class="indent1___4iVnL"><code>reduxForm()</code></a><a href="https://redux-form.com/8.1.0/docs/api/Props.md" class="indent1___4iVnL"><code>props</code></a><a href="https://redux-form.com/8.1.0/docs/api/Field.md" class="indent1___4iVnL"><code>Field</code></a><a href="https://redux-form.com/8.1.0/docs/api/Fields.md" class="indent1___4iVnL"><code>Fields</code></a><a href="https://redux-form.com/8.1.0/docs/api/FieldArray.md" class="indent1___4iVnL"><code>FieldArray</code></a><a href="https://redux-form.com/8.1.0/docs/api/Form.md" class="indent1___4iVnL"><code>Form</code></a><a href="https://redux-form.com/8.1.0/docs/api/FormName.md" class="indent1___4iVnL"><code>FormName</code></a><a href="https://redux-form.com/8.1.0/docs/api/FormSection.md" class="indent1___4iVnL"><code>FormSection</code></a><a href="https://redux-form.com/8.1.0/docs/api/FormValues.md" class="indent1___4iVnL"><code>formValues()</code></a><a href="https://redux-form.com/8.1.0/docs/api/FormValueSelector.md" class="indent1___4iVnL"><code>formValueSelector()</code></a><a href="https://redux-form.com/8.1.0/docs/api/Reducer.md" class="indent1___4iVnL"><code>reducer</code></a><a href="https://redux-form.com/8.1.0/docs/api/ReducerPlugin.md" class="indent2___2PiOO"><code>reducer.plugin()</code></a><a href="https://redux-form.com/8.1.0/docs/api/SubmissionError.md" class="indent1___4iVnL"><code>SubmissionError</code></a><a href="https://redux-form.com/8.1.0/docs/api/ActionCreators.md" class="indent1___4iVnL">Action Creators</a><a href="https://redux-form.com/8.1.0/docs/api/Selectors.md" class="indent1___4iVnL">Selectors</a><a href="https://redux-form.com/8.1.0/docs/faq" class="">FAQ</a><a href="https://redux-form.com/8.1.0/examples" class="">Examples</a><a href="https://redux-form.com/8.1.0/examples/simple" class="indent1___4iVnL">Simple Form</a><a href="https://redux-form.com/8.1.0/examples/syncValidation" class="indent1___4iVnL">Sync Validation</a><a href="https://redux-form.com/8.1.0/examples/fieldLevelValidation" class="indent1___4iVnL">Field-Level Validation</a><a href="https://redux-form.com/8.1.0/examples/submitValidation" class="indent1___4iVnL">Submit Validation</a><a href="https://redux-form.com/8.1.0/examples/asyncValidation" class="indent1___4iVnL">Async Blur Validation</a><a href="https://redux-form.com/8.1.0/examples/asyncChangeValidation" class="indent1___4iVnL">Async Change Validation</a><a href="https://redux-form.com/8.1.0/examples/initializeFromState" class="indent1___4iVnL">Initializing from State</a><a href="https://redux-form.com/8.1.0/examples/selectingFormValues" class="indent1___4iVnL">Selecting Form Values</a><a href="https://redux-form.com/8.1.0/examples/fieldArrays" class="indent1___4iVnL">Field Arrays</a><a href="https://redux-form.com/8.1.0/examples/remoteSubmit" class="indent1___4iVnL">Remote Submit</a><a href="https://redux-form.com/8.1.0/examples/normalizing" class="indent1___4iVnL">Normalizing</a><a href="https://redux-form.com/8.1.0/examples/immutable" class="indent1___4iVnL">Immutable JS</a><a href="https://redux-form.com/8.1.0/examples/wizard" class="indent1___4iVnL">Wizard Form</a><a href="https://redux-form.com/8.1.0/examples/material-ui" class="indent1___4iVnL">Material UI</a><a href="https://redux-form.com/8.1.0/examples/react-widgets" class="indent1___4iVnL">React Widgets</a><a href="https://redux-form.com/8.1.0/docs/DocumentationVersions.md" class="">Older Versions</a></nav></div><div class="contentAndFooter___kE2nt"><div class="topNav___sBW8S"><a href="https://redux-form.com" class="brand___YAZl-"></a><a class="github___3-vRv" href="https://github.com/erikras/redux-form" title="Github" target="_blank"><i class="fa fa-fw fa-github"></i></a></div><div class="content___3TVHp"><div><ol class="breadcrumbs___1BHo6"><li><a href="https://redux-form.com/8.1.0/">Redux Form</a></li><li><a href="https://redux-form.com/8.1.0/docs/faq">FAQ</a></li><li>Why are all my buttons triggering onSubmit?</li></ol><div><h1 class="heading___2W8-L" id="why-are-all-my-buttons-triggering-code-onsubmit-code-">Why are all my buttons triggering <code>onSubmit</code>? <a href="#why-are-all-my-buttons-triggering-code-onsubmit-code-" class="anchor___j3LpN">#</a></h1><p>You may want to add a &#39;reset&#39; or &#39;cancel&#39; button to your form. When doing so, be wary of the <code>type</code> property passed to your <code>&lt;button/&gt;</code>. This can cause all buttons within your form to trigger <code>onSubmit</code>.</p>
+<p><code>&lt;button/&gt;</code> elements are automatically associated with parent <code>&lt;form/&gt;</code> elements:</p>
+<blockquote>
+<p>If <em>[the <code>form</code> property]</em> is not specified, the <code>&lt;button&gt;</code> element will be associated to an ancestor <code>&lt;form&gt;</code> element, if one exists.</p>
+</blockquote>
+<p>The default <code>type</code> property assigned to <code>&lt;button/&gt;</code> elements is <code>submit</code>. This causes the button to attempt to trigger their parent form&#39;s <code>onSubmit</code> handler, regardless of the button&#39;s own click handler. By changing <code>type</code> to <code>button</code>, your button will trigger your passed event handler instead of trying to submit the form.</p>
+<p>For more information, refer to the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button">MDN documentation</a>.</p>
+</div></div></div><div class="footer___1oh0h"><div>Created by Erik Rasmussen</div><div>Got questions? Ask for help:<a class="help___3OayI" href="https://stackoverflow.com/questions/ask?tags=redux-form" title="Stack Overflow" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i></a><a class="help___3OayI" href="https://github.com/erikras/redux-form/issues/new" title="Github" target="_blank"><i class="fa fa-fw fa-github"></i></a></div><div><a href="https://twitter.com/erikras" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @erikras</a><a href="https://twitter.com/ReduxForm" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ReduxForm</a></div></div></div></div>
+  </div>
+  <script src="https://unpkg.com/react@15.6.1/dist/react.min.js" integrity="sha384-u/3By6KAUETM5AnedAbB9xV0qLxlsRyVBi8mEekTeqD468SBVx2FXEm+1lf85M7c" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@15.6.1/dist/react-dom.min.js" integrity="sha384-GfT+iyYg21YqdPMH/FWlWLugDiK/neASGRCN8yWPB2Hlam+uP7J0lIgPcbCeHoVG" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/redux-form-doc-version-checker/dist/doc-check.umd.min.js"></script>
+  <script src="https://unpkg.com/redux-form-website-template/dist/bundle.js"></script>
+  <script>
+    (function(){
+      if(typeof _bsa !== 'undefined' && _bsa) {
+        _bsa.init('default', 'CKYDV5QM', 'placement:reduxformcom', {
+          target: '.bsa-cpc',
+          align: 'horizontal',
+          disable_css: 'true'
+        })
+      }
+    })()
+  </script>
+  <script>initReact({"version":"8.1.0","path":"/docs/faq/ButtonType.md","breadcrumbs":[{"path":"https://redux-form.com/8.1.0/","title":"Redux Form"},{"path":"https://redux-form.com/8.1.0/docs/faq","title":"FAQ"},{"path":"https://redux-form.com/8.1.0/docs/faq/ButtonType.md","title":"Why are all my buttons triggering onSubmit?"}]})</script>
+  <script>
+    (function(i,s,o,g,r,a,m){i[ 'GoogleAnalyticsObject' ] = r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-69298417-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </body>
+  </html>
