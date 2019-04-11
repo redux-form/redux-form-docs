@@ -11,12 +11,13 @@ var reactExternal = {
 
 module.exports = {
   externals: {
-    'react': reactExternal
+    react: reactExternal
   },
   module: {
     loaders: [
       {
-        test: /\.js$/, loaders: [ 'babel' ],
+        test: /\.js$/,
+        loaders: ['babel'],
         exclude: /node_modules/
       }
     ]
@@ -38,6 +39,6 @@ module.exports = {
     })
   ],
   resolve: {
-    extensions: [ '', '.js' ]
+    extensions: ['', '.js']
   }
 }

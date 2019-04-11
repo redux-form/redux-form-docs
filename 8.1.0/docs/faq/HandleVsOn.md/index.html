@@ -51,8 +51,8 @@
 <h2 class="heading___2W8-L" id="how-do-i-pass-form-value-s-to-my-own-submit-handler-">How do I pass form value(s) to my own submit handler? <a href="#how-do-i-pass-form-value-s-to-my-own-submit-handler-" class="anchor___j3LpN">#</a></h2><p>redux-form covers <code>handleSubmit</code> functionality by <a href="https://github.com/zacacollier/redux-form/blob/master/src/handleSubmit.js">providing a respective handler</a> that you pass as a prop - that is, a <code>handleSubmit</code> method for you to pass to <code>onSubmit</code>.</p>
 <p>With that in mind, you can think of the redux-form <code>handleSubmit</code> as a middle layer for your form&#39;s <code>submit</code> handler. Simply write your components as you normally would, passing <code>handleSubmit</code> where appropriate:</p>
 <pre class="language-jsx"><code class="language-jsx">
-<span class="token keyword" >import</span> React <span class="token keyword" >from</span> <span class="token string" >'react'</span><span class="token punctuation" >;</span>
-<span class="token keyword" >import</span> <span class="token punctuation" >{</span> reduxForm<span class="token punctuation" >,</span> Field <span class="token punctuation" >}</span> <span class="token keyword" >from</span> <span class="token string" >'redux-form'</span><span class="token punctuation" >;</span>
+<span class="token keyword" >import</span> React <span class="token keyword" >from</span> <span class="token string" >'react'</span>
+<span class="token keyword" >import</span> <span class="token punctuation" >{</span> reduxForm<span class="token punctuation" >,</span> Field <span class="token punctuation" >}</span> <span class="token keyword" >from</span> <span class="token string" >'redux-form'</span>
 
 <span class="token keyword" >const</span> SearchBar <span class="token operator" >=</span> <span class="token punctuation" >(</span><span class="token punctuation" >{</span> handleChange<span class="token punctuation" >,</span> handleSubmit<span class="token punctuation" >,</span> value <span class="token punctuation" >}</span><span class="token punctuation" >)</span> <span class="token operator" >=</span><span class="token operator" >></span> <span class="token punctuation" >(</span>
   <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>form</span> <span class="token attr-name" >onSubmit</span><span class="token script language-javascript" ><span class="token punctuation" >=</span><span class="token punctuation" >{</span>handleSubmit<span class="token punctuation" >}</span></span><span class="token punctuation" >></span></span>
@@ -72,20 +72,23 @@
 
 <p>You can access your form&#39;s input values via the <code>values</code> parameter provided to the <code>onSubmit</code> prop:</p>
 <pre class="language-jsx"><code class="language-jsx">
-<span class="token keyword" >import</span> React <span class="token keyword" >from</span> <span class="token string" >'react'</span><span class="token punctuation" >;</span>
-<span class="token keyword" >import</span> <span class="token punctuation" >{</span> connect <span class="token punctuation" >}</span> <span class="token keyword" >from</span> <span class="token string" >'react-redux'</span><span class="token punctuation" >;</span>
-<span class="token keyword" >import</span> SearchBar <span class="token keyword" >from</span> <span class="token string" >'./SearchBar'</span><span class="token punctuation" >;</span>
+<span class="token keyword" >import</span> React <span class="token keyword" >from</span> <span class="token string" >'react'</span>
+<span class="token keyword" >import</span> <span class="token punctuation" >{</span> connect <span class="token punctuation" >}</span> <span class="token keyword" >from</span> <span class="token string" >'react-redux'</span>
+<span class="token keyword" >import</span> SearchBar <span class="token keyword" >from</span> <span class="token string" >'./SearchBar'</span>
 
-<span class="token keyword" >let</span> SearchContainer <span class="token operator" >=</span> <span class="token punctuation" >(</span><span class="token punctuation" >{</span> handleSearchSubmit <span class="token punctuation" >}</span><span class="token punctuation" >)</span> <span class="token operator" >=</span><span class="token operator" >></span> 
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>SearchBar</span>
-    <span class="token attr-name" >onSubmit</span><span class="token script language-javascript" ><span class="token punctuation" >=</span><span class="token punctuation" >{</span>values <span class="token operator" >=</span><span class="token operator" >></span> <span class="token function" >handleSearchSubmit</span><span class="token punctuation" >(</span>values<span class="token punctuation" >.</span>search<span class="token punctuation" >)</span><span class="token punctuation" >}</span></span>
-  <span class="token punctuation" >/></span></span>
+<span class="token keyword" >let</span> SearchContainer <span class="token operator" >=</span> <span class="token punctuation" >(</span><span class="token punctuation" >{</span> handleSearchSubmit <span class="token punctuation" >}</span><span class="token punctuation" >)</span> <span class="token operator" >=</span><span class="token operator" >></span> <span class="token punctuation" >(</span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>SearchBar</span> <span class="token attr-name" >onSubmit</span><span class="token script language-javascript" ><span class="token punctuation" >=</span><span class="token punctuation" >{</span>values <span class="token operator" >=</span><span class="token operator" >></span> <span class="token function" >handleSearchSubmit</span><span class="token punctuation" >(</span>values<span class="token punctuation" >.</span>search<span class="token punctuation" >)</span><span class="token punctuation" >}</span></span> <span class="token punctuation" >/></span></span>
+<span class="token punctuation" >)</span>
 
-<span class="token keyword" >const</span> mapDispatchToProps <span class="token operator" >=</span> <span class="token punctuation" >(</span>dispatch<span class="token punctuation" >)</span> <span class="token operator" >=</span><span class="token operator" >></span> <span class="token punctuation" >(</span><span class="token punctuation" >{</span>
-  handleSearchSubmit<span class="token punctuation" >:</span> value <span class="token operator" >=</span><span class="token operator" >></span> <span class="token function" >dispatch</span><span class="token punctuation" >(</span><span class="token punctuation" >{</span> type<span class="token punctuation" >:</span> <span class="token string" >'SEARCH_CONTAINER_SUBMIT'</span><span class="token punctuation" >,</span> payload<span class="token punctuation" >:</span> value <span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >,</span>
-<span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<span class="token keyword" >const</span> mapDispatchToProps <span class="token operator" >=</span> dispatch <span class="token operator" >=</span><span class="token operator" >></span> <span class="token punctuation" >(</span><span class="token punctuation" >{</span>
+  handleSearchSubmit<span class="token punctuation" >:</span> value <span class="token operator" >=</span><span class="token operator" >></span>
+    <span class="token function" >dispatch</span><span class="token punctuation" >(</span><span class="token punctuation" >{</span> type<span class="token punctuation" >:</span> <span class="token string" >'SEARCH_CONTAINER_SUBMIT'</span><span class="token punctuation" >,</span> payload<span class="token punctuation" >:</span> value <span class="token punctuation" >}</span><span class="token punctuation" >)</span>
+<span class="token punctuation" >}</span><span class="token punctuation" >)</span>
 
-<span class="token keyword" >export</span> <span class="token keyword" >default</span> <span class="token function" >connect</span><span class="token punctuation" >(</span><span class="token keyword" >null</span><span class="token punctuation" >,</span> mapDispatchToProps<span class="token punctuation" >)</span><span class="token punctuation" >(</span>SearchContainer<span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<span class="token keyword" >export</span> <span class="token keyword" >default</span> <span class="token function" >connect</span><span class="token punctuation" >(</span>
+  <span class="token keyword" >null</span><span class="token punctuation" >,</span>
+  mapDispatchToProps
+<span class="token punctuation" >)</span><span class="token punctuation" >(</span>SearchContainer<span class="token punctuation" >)</span>
 </code></pre>
 
 <p>That&#39;s it! No need to specify <code>event.preventDefault()</code>. All that&#39;s left to do is handle the dispatched form data in your reducer.</p>

@@ -116,6 +116,10 @@ situations where the form has live updates or continues to be editable after
 form submission; it prevents reinitialization from overwriting user changes.
 Defaults to <code>false</code>.</p>
 </blockquote>
+<h4 class="heading___2W8-L" id="-code-submitassideeffect-boolean-code-optional-"><code>submitAsSideEffect : boolean</code> [optional] <a href="#-code-submitassideeffect-boolean-code-optional-" class="anchor___j3LpN">#</a></h4><blockquote>
+<p>When set to <code>true</code>, the return value of <code>onSubmit</code> function will be dispatched
+as a Redux action. <strong>IMPORTANT: When set, submission lifecycle is not run automatically</strong></p>
+</blockquote>
 <h4 class="heading___2W8-L" id="-code-updateunregisteredfields-boolean-code-optional-"><code>updateUnregisteredFields : boolean</code> [optional] <a href="#-code-updateunregisteredfields-boolean-code-optional-" class="anchor___j3LpN">#</a></h4><blockquote>
 <p>Used in combination with <code>keepDirtyOnReinitialize</code>. Will update every
 initialValue which is still pristine. Normally only registered Fields will be
