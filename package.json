@@ -28,7 +28,7 @@
     "mkdirp": "^0.5.1",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "redux-form": "^8.2.0",
+    "redux-form": "^8.2.1",
     "redux-form-doc-version-checker": "^1.0.13",
     "redux-form-website-template": "^1.0.7"
   },
