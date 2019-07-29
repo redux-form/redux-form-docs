@@ -1149,7 +1149,7 @@ code {
   top: -1000px;
 }
 
-#triplebyte___2mBHR {
+.triplebyte___2mBHR {
   position: fixed;
   top: 0;
   left: 0;
@@ -1166,7 +1166,7 @@ code {
 }
 
 @media (min-width: 920px) {
-  #triplebyte___2mBHR {
+  .triplebyte___2mBHR {
     padding-left: 0;
   }
 }
