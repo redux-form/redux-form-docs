@@ -1162,12 +1162,12 @@ code {
   text-align: center;
   padding: 5px;
   z-index: 20;
-  padding-left: 240px;
+  padding-left: 0;
 }
 
 @media (min-width: 920px) {
   .triplebyte___2mBHR {
-    padding-left: 0;
+    padding-left: 240px;
   }
 }
 .home___381a9 .masthead___MGNF0 {
