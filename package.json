@@ -31,7 +31,7 @@
     "react-dom": "^16.6.0",
     "redux-form": "^8.2.2",
     "redux-form-doc-version-checker": "^1.2.0",
-    "redux-form-website-template": "^1.0.18"
+    "redux-form-website-template": "^1.0.20"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
