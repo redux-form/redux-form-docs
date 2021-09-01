@@ -65,7 +65,7 @@ pieces from the <code>redux-form</code> package:</p>
 </tbody></table>
 <h2 class="heading___2W8-L" id="data-flow">Data flow <a href="#data-flow" class="anchor___j3LpN">#</a></h2><p>The diagram below represents the simplified data flow. Note that in most cases
 you don&#39;t need to worry about the
-<a href="https://redux-form.com/8.2.2/docs/api/ActionCreators.md/">action creators</a> for
+<a href="https://redux-form.com/8.3.0/docs/api/ActionCreators.md/">action creators</a> for
 yourself, as they&#39;re already bound to dispatch for certain actions.</p>
 <div style="text-align: center;">
   <img src="https://github.com/redux-form/redux-form/raw/master/docs/reduxFormDiagram.png" width="500" style="max-width: 100%;"/>
@@ -105,7 +105,7 @@ enable this, we need to pass the <code>formReducer</code> to your store. It serv
 <p>Now your store knows how to handle actions coming from the form components.</p>
 <p><strong>NOTE:</strong> The key used to pass the <code>redux-form</code> reducer should be named
 <strong><code>form</code></strong>. If you need a custom key for some reason see
-<a href="https://redux-form.com/8.2.2/docs/api/ReduxForm.md/#-getformstate-function-optional-"><code>getFormState</code> config</a>
+<a href="https://redux-form.com/8.3.0/docs/api/ReduxForm.md/#-getformstate-function-optional-"><code>getFormState</code> config</a>
 for more details.</p>
 <h3 class="heading___2W8-L" id="step-2-of-4-form-component">Step 2 of 4: Form component <a href="#step-2-of-4-form-component" class="anchor___j3LpN">#</a></h3><p>To make your form component communicate with the store, we need to wrap it with
 <code>reduxForm()</code>. It will provide the props about the form state and function to
@@ -153,7 +153,7 @@ props such as <code>value</code>, <code>onChange</code>, <code>onBlur</code>, et
 maintain the input state under the hood.</p>
 <p><strong>NOTE</strong>: <code>&lt;Field/&gt;</code> component is much more powerful. Apart from basic input
 types, it can take a class or a stateless component. When you&#39;re ready, go to
-the <a href="https://redux-form.com/8.2.2/docs/api/Field.md/#usage">docs</a> to find out
+the <a href="https://redux-form.com/8.3.0/docs/api/Field.md/#usage">docs</a> to find out
 more.</p>
 <p>Let&#39;s finish up our contact form:</p>
 <pre class="language-jsx"><code class="language-jsx">
@@ -209,15 +209,15 @@ form component. We can now handle the submission.</p>
 </code></pre>
 
 <p>You can now take it from here. We recommend to check out the
-<a href="https://redux-form.com/8.2.2/examples/">examples</a>. The common next steps could
+<a href="https://redux-form.com/8.3.0/examples/">examples</a>. The common next steps could
 also be:</p>
 <ul>
 <li>setting the
-<a href="https://redux-form.com/8.2.2/examples/initializeFromState/">initial form values</a>,</li>
+<a href="https://redux-form.com/8.3.0/examples/initializeFromState/">initial form values</a>,</li>
 <li>implementing the
-<a href="https://redux-form.com/8.2.2/examples/syncValidation/">validation</a>,</li>
+<a href="https://redux-form.com/8.3.0/examples/syncValidation/">validation</a>,</li>
 <li>creating dynamic forms with
-<a href="https://redux-form.com/8.2.2/examples/fieldArrays/">arrays of fields</a>.</li>
+<a href="https://redux-form.com/8.3.0/examples/fieldArrays/">arrays of fields</a>.</li>
 </ul>
 </div></div></div><div class="footer___1oh0h"><div>Created by Erik Rasmussen</div><div>Got questions? Ask for help:<a class="help___3OayI" href="https://stackoverflow.com/questions/ask?tags=redux-form" title="Stack Overflow" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i></a><a class="help___3OayI" href="https://github.com/erikras/redux-form/issues/new" title="Github" target="_blank"><i class="fa fa-fw fa-github"></i></a></div><div><a href="https://twitter.com/erikras" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @erikras</a><a href="https://twitter.com/ReduxForm" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ReduxForm</a></div><div><a href="https://www.netlify.com" target="_blank"><img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg"/></a></div></div></div></div>
   </div>
